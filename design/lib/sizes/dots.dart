@@ -8,6 +8,7 @@ enum Dots{
   p32,
   p48,
   p64,
+  p96,
 }
 
 extension DotsExtension on Dots{
@@ -31,6 +32,8 @@ extension DotsExtension on Dots{
         return 48.0;
       case Dots.p64:
         return 64.0;
+      case Dots.p96:
+        return 96.0;
     }
   }
 }

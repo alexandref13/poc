@@ -1,3 +1,5 @@
+import 'dots.dart';
+
 enum BreakpointsEnum{
   desktop,
   laptop,
@@ -9,13 +11,13 @@ extension BreakpointsEnumExtension on BreakpointsEnum{
   double get value{
     switch(this){
       case BreakpointsEnum.desktop:
-        return 1200;
+        return Dots.p4.value * 300; ///1200px
       case BreakpointsEnum.laptop:
-        return 1024;
+        return Dots.p4.value * 256; ///1024px
       case BreakpointsEnum.tablet:
-        return 900;
+        return Dots.p4.value * 225; ///900px
       case BreakpointsEnum.mobile:
-        return 600;
+        return Dots.p4.value * 150; ///600px
     }
   }
 }

@@ -10,6 +10,7 @@ enum Gaps{
   gap32,
   gap48,
   gap64,
+  gap96,
 }
 
 extension GapsExtension on Gaps{
@@ -33,6 +34,8 @@ extension GapsExtension on Gaps{
         return Dots.p48.value;
       case Gaps.gap64:
         return Dots.p64.value;
+      case Gaps.gap96:
+        return Dots.p96.value;
     }
   }
 }

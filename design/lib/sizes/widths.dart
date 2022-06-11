@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'dots.dart';
+
 enum Widths{
   w4,
   w8,
@@ -10,29 +12,32 @@ enum Widths{
   w32,
   w48,
   w64,
+  w96,
 }
 
 extension WidthsExtension on Widths{
   Widget get value{
     switch(this){
       case Widths.w4:
-        return const SizedBox(width: 4.0);
+        return SizedBox(width: Dots.p4.value);
       case Widths.w8:
-        return const SizedBox(width: 8.0);
+        return SizedBox(width: Dots.p8.value);
       case Widths.w12:
-        return const SizedBox(width: 12.0);
+        return SizedBox(width: Dots.p12.value);
       case Widths.w16:
-        return const SizedBox(width: 16.0);
+        return SizedBox(width: Dots.p16.value);
       case Widths.w20:
-        return const SizedBox(width: 20.0);
+        return SizedBox(width: Dots.p20.value);
       case Widths.w24:
-        return const SizedBox(width: 24.0);
+        return SizedBox(width: Dots.p24.value);
       case Widths.w32:
-        return const SizedBox(width: 32.0);
+        return SizedBox(width: Dots.p32.value);
       case Widths.w48:
-        return const SizedBox(width: 48.0);
+        return SizedBox(width: Dots.p48.value);
       case Widths.w64:
-        return const SizedBox(width: 64.0);
+        return SizedBox(width: Dots.p64.value);
+      case Widths.w96:
+        return SizedBox(width: Dots.p96.value);
     }
   }
 }
