@@ -1,4 +1,5 @@
 enum Dots{
+  p0,
   p4,
   p8,
   p12,
@@ -14,6 +15,8 @@ enum Dots{
 extension DotsExtension on Dots{
   double get value{
     switch(this){
+      case Dots.p0:
+        return 0;
       case Dots.p4:
         return 4.0;
       case Dots.p8:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'font_styles.dart';
 import 'dark_pallete.dart';
+import '../../sizes/sizes.dart';
 
 export 'font_styles.dart';
 export 'dark_pallete.dart';
@@ -44,46 +45,46 @@ class DarkTheme {
         ),
         floatingLabelStyle: FontStyles.paragraphLarge.getText,
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        contentPadding: const EdgeInsets.all(15),
+        contentPadding: EdgeInsets.all(Dots.p16.value),
 
         //borders
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: const BorderSide(
             width: 1,
             color: DarkPallete.mainColor,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: BorderSide(
             width: 1,
             color: DarkPallete.grayPrimary.shade300,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: const BorderSide(
             width: 1,
             color: DarkPallete.warning,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: const BorderSide(
             width: 1,
             color: DarkPallete.warning,
           ),
         ),
         disabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: BorderSide(
             width: 1,
             color: DarkPallete.grayPrimary.shade600,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: BorderSide(
             width: 1,
             color: DarkPallete.mainColor.shade600,
@@ -154,12 +155,12 @@ class DarkTheme {
     style: ButtonStyle(
       fixedSize:
           MaterialStateProperty.resolveWith<Size?>((Set<MaterialState> states) {
-        return const Size.fromHeight(40);
+        return Size.fromHeight(Dots.p48.value);
       }),
       shape: MaterialStateProperty.resolveWith<OutlinedBorder?>(
           (Set<MaterialState> states) {
         return RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
         );
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
@@ -193,12 +194,12 @@ class DarkTheme {
     style: ButtonStyle(
       fixedSize:
           MaterialStateProperty.resolveWith<Size?>((Set<MaterialState> states) {
-        return const Size.fromHeight(40);
+        return Size.fromHeight(Dots.p48.value);
       }),
       shape: MaterialStateProperty.resolveWith<OutlinedBorder?>(
           (Set<MaterialState> states) {
         return RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
         );
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
@@ -239,7 +240,7 @@ class DarkTheme {
     style: ButtonStyle(
       fixedSize:
           MaterialStateProperty.resolveWith<Size?>((Set<MaterialState> states) {
-        return const Size.fromHeight(40);
+        return Size.fromHeight(Dots.p48.value);
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
           (Set<MaterialState> states) {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../sizes/sizes.dart';
+
 enum FontStyles {
   headingDisplay,
   headingXLarge,
@@ -18,120 +20,123 @@ enum FontStyles {
   logoSmall
 }
 
+String defaultFont = 'Cabin';
+String logoFont = 'Poppins';
+
 extension FontStylesExt on FontStyles {
   TextStyle get getText {
     switch (this) {
       case FontStyles.headingDisplay:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 96,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p96.value,
           fontWeight: FontWeight.w700,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.headingXLarge:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 64,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p64.value,
           fontWeight: FontWeight.w700,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.headingLarge:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 48,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p48.value,
           fontWeight: FontWeight.w700,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.headingMedium:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 32,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p32.value,
           fontWeight: FontWeight.w700,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.headingSmall:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 24,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p24.value,
           fontWeight: FontWeight.w700,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.headingXSmall:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 16,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p16.value,
           fontWeight: FontWeight.normal,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.subtitleLarge:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 32,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p32.value,
           fontWeight: FontWeight.w500,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.subtitleSmall:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 24,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p24.value,
           fontWeight: FontWeight.w500,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.paragraphLarge:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 20,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p20.value,
           fontWeight: FontWeight.w400,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.paragraphSmall:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 16,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p16.value,
           fontWeight: FontWeight.w400,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.caption:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 14,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p16.value,
           fontWeight: FontWeight.w400,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.captionSmall:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 12,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p12.value,
           fontWeight: FontWeight.w400,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.button:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 16,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p16.value,
           fontWeight: FontWeight.w600,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       case FontStyles.logo:
-        return const TextStyle(
-          fontFamily: 'Poppins',
-          fontSize: 28,
+        return TextStyle(
+          fontFamily: logoFont,
+          fontSize: Dots.p32.value,
           fontWeight: FontWeight.w600,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
-        case FontStyles.logoSmall:
-        return const TextStyle(
-          fontFamily: 'Poppins',
-          fontSize: 18,
+      case FontStyles.logoSmall:
+        return TextStyle(
+          fontFamily: logoFont,
+          fontSize: Dots.p20.value,
           fontWeight: FontWeight.w600,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
       default:
-        return const TextStyle(
-          fontFamily: 'Cabin',
-          fontSize: 16,
+        return TextStyle(
+          fontFamily: defaultFont,
+          fontSize: Dots.p16.value,
           fontWeight: FontWeight.w400,
-          letterSpacing: 0,
+          letterSpacing: Dots.p0.value,
         );
     }
   }

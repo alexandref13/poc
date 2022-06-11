@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'font_styles.dart';
 import 'light_pallete.dart';
+import '../../sizes/sizes.dart';
 
 export 'font_styles.dart';
 export 'light_pallete.dart';
@@ -44,46 +45,46 @@ class LightTheme {
         ),
         floatingLabelStyle: FontStyles.paragraphLarge.getText,
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        contentPadding: const EdgeInsets.all(15),
+        contentPadding: EdgeInsets.all(Dots.p16.value),
 
         //borders
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: const BorderSide(
             width: 1,
             color: LightPallete.mainColor,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: BorderSide(
             width: 1,
             color: LightPallete.grayPrimary.shade300,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: const BorderSide(
             width: 1,
             color: LightPallete.warning,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: const BorderSide(
             width: 1,
             color: LightPallete.warning,
           ),
         ),
         disabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: BorderSide(
             width: 1,
             color: LightPallete.grayPrimary.shade600,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
           borderSide: BorderSide(
             width: 1,
             color: LightPallete.mainColor.shade600,
@@ -148,18 +149,18 @@ class LightTheme {
         return LightPallete.white;
       }),
       materialTapTargetSize: MaterialTapTargetSize.padded,
-      side: BorderSide(width: 2, color: LightPallete.grayPrimary.shade200));
+      side: BorderSide(width: 2, color: LightPallete.grayPrimary.shade200,));
 
   final _elevatedButtonThemeData = ElevatedButtonThemeData(
     style: ButtonStyle(
       fixedSize:
           MaterialStateProperty.resolveWith<Size?>((Set<MaterialState> states) {
-        return const Size.fromHeight(40);
+        return Size.fromHeight(Dots.p48.value);
       }),
       shape: MaterialStateProperty.resolveWith<OutlinedBorder?>(
           (Set<MaterialState> states) {
         return RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
         );
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
@@ -193,12 +194,12 @@ class LightTheme {
     style: ButtonStyle(
       fixedSize:
           MaterialStateProperty.resolveWith<Size?>((Set<MaterialState> states) {
-        return const Size.fromHeight(40);
+        return Size.fromHeight(Dots.p48.value);
       }),
       shape: MaterialStateProperty.resolveWith<OutlinedBorder?>(
           (Set<MaterialState> states) {
         return RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(Dots.p8.value),
         );
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
@@ -225,12 +226,12 @@ class LightTheme {
       side: MaterialStateProperty.resolveWith<BorderSide?>(
           (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled)) {
-          return BorderSide(width: 1, color: LightPallete.grayPrimary.shade500);
+          return BorderSide(width: 1, color: LightPallete.grayPrimary.shade500,);
         }
         if (states.contains(MaterialState.pressed)) {
-          return BorderSide(width: 1, color: LightPallete.grayPrimary.shade600);
+          return BorderSide(width: 1, color: LightPallete.grayPrimary.shade600,);
         }
-        return BorderSide(width: 1, color: LightPallete.grayPrimary.shade400);
+        return BorderSide(width: 1, color: LightPallete.grayPrimary.shade400,);
       }),
     ),
   );
@@ -239,7 +240,7 @@ class LightTheme {
     style: ButtonStyle(
       fixedSize:
           MaterialStateProperty.resolveWith<Size?>((Set<MaterialState> states) {
-        return const Size.fromHeight(40);
+        return Size.fromHeight(Dots.p48.value);
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
           (Set<MaterialState> states) {
