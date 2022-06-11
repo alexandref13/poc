@@ -1,0 +1,58 @@
+{
+    "welcome":{
+        "name": "Bem-vindo",
+        "title": "Obrigado por instalar o app EAQ Brasil Banda Larga",
+        "description":"Começaremos revendo as diretivas de privacidade para que sua experiência seja mais confortável e segura.",
+        "next": "Prosseguir"
+    },
+    "permissions":{
+        "name": "Permissões",
+        "description": "Para que a sua conexão de banda larga seja aferida adequadamente é necessário habilitar as permissões a seguir no seu aparelho:",
+        "text": "Caso concorde, na sequência, favor conceder as permissões necessárias, avaliar os termos de uso e prosseguir com sua aferição normalmente.",
+        "next": "Prosseguir",
+        "content": [
+            {
+                "title": "Sua localização geográfica",
+                "description": "(Necessária para identificar o melhor servidor para seu teste)"
+            },
+            {
+                "title": "Acesso às mídias",
+                "description": "(Necessária apenas para armazenagem dos registros de testes no seu aparelho)"
+            },
+            {
+                "title": "Ligações telefônicas",
+                "description": "(Necessária para identificar o melhor servidor para seu teste)"
+            }
+        ]
+    },
+    "localization": {
+        "name": "Localização",
+        "next": "Prosseguir",
+        "content": [
+            {
+                "paragraph": "O aplicativo pode coletar seus dados de localização para medições autônomas mesmo quando estiver fechado ou não utilizado."
+            },
+            {
+                "paragraph": "Essas medições somente serão realizadas quando não houver concorrência de uso, evitando impacto na navegabilidade e prejuízo ao usuário."
+            },
+            {
+                "paragraph": "As medições autônomas não serão cobradas da franquia do assinante."
+            }
+        ]
+    },
+    "grantPermissions": {
+        "name": "Conceder permissões",
+        "description": "Permitir que o app EAQ acesse a localização desde dispositivo?",
+        "grant": "Conceder",
+        "not_grant": "Negar"
+    },
+    "network": {
+        "name": "Tipo de Rede",
+        "title": "Este é o tipo de rede que você está utilizando:"
+    },
+    "home": {
+        "name": "Home",
+        "paragraph": "Parabéns você acessou o app EAQ Brasil Banda Larga",
+        "permission": "Alterar permissões"
+    }
+}
