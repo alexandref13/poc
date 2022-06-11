@@ -2,26 +2,31 @@ import 'dart:io';
 
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import '../../sizes/sizes.dart';
+import '../../assets/assets.dart';
 
 class DefaultScreen extends StatelessWidget {
-  const DefaultScreen({
+  DefaultScreen({
     Key? key,
     this.title = 'Page Title',
     this.isBottomNavigation = false,
     this.isBackground = true,
-    this.backgroundPath = 'assets/images/background.png',
     this.backRoute,
     this.children,
-  }) : super(key: key);
+    String? backgroundPath,
+  }) : _backgroundPath = backgroundPath ?? Assets.background.path,
+        super(key: key);
 
   final String title;
   final bool isBottomNavigation;
   final bool isBackground;
-  final String backgroundPath;
   final List<Widget>? children;
   final String? backRoute;
 
-  void navigateToBack() => backRoute != null ? Modular.to.navigate(backRoute!) : exit(0);
+  final String _backgroundPath;
+
+  void navigateToBack() =>
+      backRoute != null ? Modular.to.navigate(backRoute!) : exit(0);
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +40,15 @@ class DefaultScreen extends StatelessWidget {
           appBar: AppBar(
             title: Text(title),
             centerTitle: true,
-            leading: const Image(
-                image: AssetImage('assets/images/anatel_logo_white.png')),
-            leadingWidth: 36,
-            actions: const [
+            leading:
+                Image(image: AssetImage(Assets.anatel.path)),
+            leadingWidth: Dots.p32.value,
+            actions: [
               SizedBox(
-                  width: 48,
-                  height: 48,
+                  width: Dots.p48.value,
+                  height: Dots.p48.value,
                   child: Image(
-                      image: AssetImage('assets/images/eaq_logo_white.png')))
+                      image: AssetImage(Assets.eaq.path))),
             ],
           ),
           bottomNavigationBar: isBottomNavigation
@@ -58,11 +63,11 @@ class DefaultScreen extends StatelessWidget {
               : null,
           body: Container(
             width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(Dots.p16.value),
             decoration: isBackground
                 ? BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(backgroundPath),
+                      image: AssetImage(_backgroundPath),
                       fit: BoxFit.cover,
                     ),
                   )

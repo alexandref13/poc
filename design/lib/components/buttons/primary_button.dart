@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../sizes/sizes.dart';
 import '../../themes/themes.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -39,7 +40,7 @@ class PrimaryButton extends StatelessWidget {
         shape: MaterialStateProperty.resolveWith<OutlinedBorder?>(
             (Set<MaterialState> states) {
           return RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(6),
+            borderRadius: BorderRadius.circular(Dots.p8.value),
           );
         }),
         elevation: MaterialStateProperty.resolveWith<double?>(
