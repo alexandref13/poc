@@ -3,7 +3,7 @@
 error=false
 
 show_help() {
-    printf "usage: $0 [--help] [--test] [--test-changed] [--analyze] [--report] [--clean] [--get] [--storybook-build] [--run]
+    printf "usage: $0 [--help] [--test] [--test-changed] [--analyze] [--report] [--clean] [--get] [--storybook-build] [--run] [--build-fix]
 
 Tool for running useful commands on all Micro Apps.
 
@@ -27,6 +27,8 @@ where:
         Run storybook build for web with release mode
     --run
         Run for connected device
+    --build-fix
+        Fix build conflicts for IOS and MacOs
     --help
         Print this message
 "
@@ -39,6 +41,30 @@ runRun() {
     if [ -f "pubspec.yaml" ]; then
         echo "Executting App"
         flutter run
+    fi
+
+    cd - >/dev/null
+}
+
+runBuildFix() {
+    cd app || exit
+
+    if [ -f "pubspec.yaml" ]; then
+        echo "Fixing IOS build"
+        cd ios
+        rm -Rf Pods
+        rm -Rf .symlinks
+        rm -Rf Flutter/Flutter.framework
+        rm -Rf Flutter/Flutter.podspec
+        pod install
+        cd -
+        echo "Fixing MacOs build"
+        cd macos
+        rm -Rf Pods
+        rm -Rf .symlinks
+        rm -Rf Flutter/Flutter.framework
+        rm -Rf Flutter/Flutter.podspec
+        pod install
     fi
 
     cd - >/dev/null
@@ -195,9 +221,12 @@ case $1 in
 --run)
     # exclude hidden
     dirs=($(find . -not -path '*/\.*' -not -path '*/storybook' -maxdepth 1 -type d))
-    #for dir in "${dirs[@]}"; do
-    #    runRun "$dir"
-    #done
+    runRun
+    ;;
+--build-fix)
+    # exclude hidden
+    dirs=($(find . -not -path '*/\.*' -not -path '*/storybook' -maxdepth 1 -type d))
+    runBuildFix
     ;;
 --runner)
     # exclude hidden
