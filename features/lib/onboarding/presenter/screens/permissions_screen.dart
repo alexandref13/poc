@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:core/core.dart';
-import 'package:layouts/layouts.dart';
+import 'package:design/design.dart';
 
 class PermissionsScreen extends StatelessWidget {
   const PermissionsScreen({Key? key}) : super(key: key);

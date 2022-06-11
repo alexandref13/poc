@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:core/core.dart';
-import 'package:layouts/layouts.dart';
+import 'package:design/design.dart';
 
 
 

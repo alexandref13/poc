@@ -141,6 +141,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.7.5"
+  design:
+    dependency: "direct main"
+    description:
+      path: "../design"
+      relative: true
+    source: path
+    version: "0.0.1"
   dio:
     dependency: transitive
     description:
@@ -322,13 +329,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.4"
-  layouts:
-    dependency: "direct main"
-    description:
-      path: "../layouts"
-      relative: true
-    source: path
-    version: "0.0.1"
   lints:
     dependency: transitive
     description:

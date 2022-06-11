@@ -18,8 +18,8 @@ dependencies:
     path: ../core
   features:
     path: ../features
-  layouts:
-    path: ../layouts
+  design:
+    path: ../design
 
 dev_dependencies:
   flutter_test:
