@@ -1,5 +1,4 @@
-import 'package:core/core.dart';
-import 'package:features/features.dart';
+import 'package:presenter/presenter.dart';
 
 class AppModule extends Module {
   @override

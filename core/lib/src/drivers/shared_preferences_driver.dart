@@ -1,5 +1,4 @@
-import 'package:dartz/dartz.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import '../../dependencies/dependencies.dart';
 
 abstract class ISharedPreferencesDriver {
   Future<Either<Exception, Unit>> setStringByKey({required String key,required String value});

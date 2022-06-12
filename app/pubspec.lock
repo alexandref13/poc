@@ -114,7 +114,7 @@ packages:
     source: hosted
     version: "1.2.2"
   core:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../core"
       relative: true
@@ -142,7 +142,7 @@ packages:
     source: hosted
     version: "0.7.5"
   design:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../design"
       relative: true
@@ -163,7 +163,7 @@ packages:
     source: hosted
     version: "1.3.0"
   features:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../features"
       relative: true
@@ -462,6 +462,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
+  presenter:
+    dependency: "direct main"
+    description:
+      path: "../presenter"
+      relative: true
+    source: path
+    version: "0.0.1"
   process:
     dependency: transitive
     description:

@@ -14,12 +14,8 @@ dependencies:
     sdk: flutter
 
   intl:
-  core:
-    path: ../core
-  features:
-    path: ../features
-  design:
-    path: ../design
+  presenter:
+    path: ../presenter
 
 dev_dependencies:
   flutter_test:
