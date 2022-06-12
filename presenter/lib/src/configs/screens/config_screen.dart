@@ -3,28 +3,38 @@ import 'package:flutter/material.dart';
 import '../../../dependencies/dependencies.dart';
 import '../stores/stores.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class ConfigsScreen extends StatefulWidget{
+  const ConfigsScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ConfigsScreen> createState() => _ConfigsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ConfigsScreenState extends State<ConfigsScreen> {
   @override
   void initState() {
     super.initState();
+
+    store.getPermissions();
   }
 
   @override
   void dispose() {
+    store.dispose();
     super.dispose();
   }
 
-  final store = Modular.get<HomeStore>();
+  final store = Modular.get<ConfigsStore>();
 
-  final String _screen = 'home';
-  //final String _backScreen = '/welcome';
+  final String _screen = 'configs';
+  final String _backScreen = '/welcome';
+
+  removePermissions() {
+    if (store.state.isGranted) {
+      store.setPermissions(PermissionsEntity(isGranted: false));
+      Modular.to.navigate(_backScreen);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +59,10 @@ class _HomeScreenState extends State<HomeScreen> {
           textAlign: TextAlign.center,
         ),
         Heights.h64.value,
+        RedButton(
+          child: Text(L10N(context).text(_screen)['button']),
+          onPressed: () => removePermissions(),
+        )
       ],
     );
   }

@@ -6,6 +6,7 @@ import '../../sizes/sizes.dart';
 
 export 'font_styles.dart';
 export 'light_pallete.dart';
+export 'icons_pallete.dart';
 
 
 class LightTheme {

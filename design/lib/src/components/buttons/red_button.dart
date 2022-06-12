@@ -3,39 +3,29 @@ import 'package:flutter/material.dart';
 import '../../sizes/sizes.dart';
 import '../../themes/themes.dart';
 
-class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({
+class RedButton extends StatelessWidget {
+  const RedButton({
     Key? key,
-    this.isPrimary = true,
     this.text,
     required this.onPressed,
     this.child,
   }) : super(key: key);
 
   final Function()? onPressed;
-  final bool isPrimary;
   final Widget? child;
   final String? text;
 
   @override
   Widget build(BuildContext context) {
-    return text != null
-        ? textButton()
-        : isPrimary
-            ? primaryButton()
-            : secondaryButton();
-  }
-
-  Widget primaryButton() {
     return ElevatedButton(
       onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) {
-            return LightPallete.mainColor;
+            return LightPallete.warning;
           }
-          return LightPallete.mainColor;
+          return LightPallete.warning;
         }),
         shape: MaterialStateProperty.resolveWith<OutlinedBorder?>(
             (Set<MaterialState> states) {
@@ -49,22 +39,6 @@ class PrimaryButton extends StatelessWidget {
         }),
       ),
       child: child,
-    );
-  }
-
-  Widget secondaryButton() {
-    return OutlinedButton(
-      onPressed: onPressed,
-      child: child!,
-    );
-  }
-
-  Widget textButton() {
-    return TextButton(
-      onPressed: onPressed,
-      child: Center(
-        child: Text(text!),
-      ),
     );
   }
 }

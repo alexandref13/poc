@@ -5,30 +5,7 @@ import 'screens/screens.dart';
 
 class Home extends Module {
   @override
-  final List<Bind> binds = [
-    Bind.lazySingleton((i) => GetPermissionsDatasource(
-          preferences: i.get<SharedPreferencesDriver>(),
-        )),
-    Bind.lazySingleton((i) => GetPermissionsRepository(
-          datasource: i.get<GetPermissionsDatasource>(),
-        )),
-    Bind.lazySingleton((i) => GetPermissionsUsecase(
-          repository: i.get<GetPermissionsRepository>(),
-        )),
-    Bind.lazySingleton((i) => SetPermissionsDatasource(
-          preferences: i.get<SharedPreferencesDriver>(),
-        )),
-    Bind.lazySingleton((i) => SetPermissionsRepository(
-          datasource: i.get<SetPermissionsDatasource>(),
-        )),
-    Bind.lazySingleton((i) => SetPermissionsUsecase(
-          repository: i.get<SetPermissionsRepository>(),
-        )),
-    Bind.lazySingleton((i) => HomeStore(
-          setPermissionsUsecase: i.get<ISetPermissionsUsecase>(),
-          getPermissionsUsecase: i.get<IGetPermissionsUsecase>(),
-        )),
-  ];
+  final List<Bind> binds = [];
 
   @override
   final List<ModularRoute> routes = [
@@ -38,10 +15,5 @@ class Home extends Module {
       transition: TransitionType.rightToLeftWithFade,
       duration: const Duration(milliseconds: 300),
     ),
-    //ChildRoute(
-    //  '/permissions',
-    //  child: (_, args) => const PermissionsScreen(),
-    //  duration: const Duration(milliseconds: 300),
-    //),
   ];
 }

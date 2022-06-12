@@ -59,9 +59,12 @@
         "permission": "Change permissions",
         "navigation": [
             { "label": "Speedometer"},
-            { "label": "Summary"},
-            { "label": "Historic"}
-        ],
+            { "label": "Historic"},
+            { "label": "Configs"}
+        ]
+    },
+    "configs":{
+        "name": "Configs",
         "button": "Permissions Revoke"
     }
 }

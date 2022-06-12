@@ -59,9 +59,12 @@
         "permission": "Alterar permissões",
         "navigation": [
             { "label": "Velocímetro"},
-            { "label": "Resumo"},
-            { "label": "Histórico"}
-        ],
+            { "label": "Histórico"},
+            { "label": "Ajustes"}
+        ]
+    },
+    "configs":{
+        "name": "Ajustes",
         "button": "Remover Permissões"
     }
 }
