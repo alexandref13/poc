@@ -1,7 +1,9 @@
 
 import '../../dependencies/dependencies.dart';
-import 'provider/provider.dart';
+import 'stores/stores.dart';
 import 'screens/screens.dart';
+
+
 
 class Onboarding extends Module {
   @override
@@ -24,7 +26,7 @@ class Onboarding extends Module {
     Bind.lazySingleton((i) => SetPermissionsUsecase(
           repository: i.get<SetPermissionsRepository>(),
         )),
-    Bind.lazySingleton((i) => OnboardingProvider(
+    Bind.lazySingleton((i) => OnboardingStore(
           setPermissionsUsecase: i.get<ISetPermissionsUsecase>(),
           getPermissionsUsecase: i.get<IGetPermissionsUsecase>(),
         )),
@@ -34,8 +36,13 @@ class Onboarding extends Module {
   final List<ModularRoute> routes = [
     ChildRoute(
       Modular.initialRoute,
-      child: (_, args) => const OnboardingScreen(),
+      child: (_, args) => const SplashScreen(),
       transition: TransitionType.rightToLeftWithFade,
+      duration: const Duration(milliseconds: 300),
+    ),
+    ChildRoute(
+      '/welcome',
+      child: (_, args) => const OnboardingScreen(),
       duration: const Duration(milliseconds: 300),
     ),
     ChildRoute(

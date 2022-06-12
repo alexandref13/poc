@@ -7,7 +7,7 @@ import '../../assets/assets.dart';
 class DefaultScreen extends StatelessWidget {
   DefaultScreen({
     Key? key,
-    this.title = 'Page Title',
+    this.title,
     this.isBackground = true,
     this.children,
     this.onBackPressed,
@@ -16,7 +16,7 @@ class DefaultScreen extends StatelessWidget {
   })  : _backgroundPath = backgroundPath ?? Assets.background.path,
         super(key: key);
 
-  final String title;
+  final String? title;
   final bool isBackground;
   final List<Widget>? children;
   final Function? onBackPressed;
@@ -35,8 +35,8 @@ class DefaultScreen extends StatelessWidget {
         return false;
       },
       child: Scaffold(
-          appBar: AppBar(
-            title: Text(title),
+          appBar: title != null ? AppBar(
+            title: Text(title!),
             centerTitle: true,
             leading: Padding(
               padding: EdgeInsets.symmetric(
@@ -56,7 +56,7 @@ class DefaultScreen extends StatelessWidget {
                 ),
               ),
             ],
-          ),
+          ) : null,
           bottomNavigationBar: navigationItens != null ? BottomNavigationBar(items: navigationItens!) : null,
           body: Container(
             width: MediaQuery.of(context).size.width,

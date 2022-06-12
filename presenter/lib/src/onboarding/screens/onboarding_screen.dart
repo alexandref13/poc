@@ -7,20 +7,19 @@ class OnboardingScreen extends StatelessWidget {
 
   final String _screen = 'welcome';
   final String _nextScreen = 'permissions';
-  final String? _backScreen = null;
 
   @override
   Widget build(BuildContext context) {
     return DefaultScreen(
       title: L10N(context).text(_screen)['name'],
       children: [
-        const SizedBox(height: 32),
+        Heights.h32.value,
         Text(
           L10N(context).text(_screen)['title'],
           style: FontStyles.headingSmall.getText,
           textAlign: TextAlign.center,
         ),
-        const SizedBox(height: 64),
+        Heights.h64.value,
         Text(
           L10N(context).text(_screen)['description'],
           style: FontStyles.paragraphSmall.getText,

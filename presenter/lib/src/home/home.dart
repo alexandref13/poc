@@ -1,12 +1,33 @@
 import '../../dependencies/dependencies.dart';
 
-import 'provider/provider.dart';
+import 'stores/stores.dart';
 import 'screens/screens.dart';
 
 class Home extends Module {
   @override
   final List<Bind> binds = [
-    Bind.lazySingleton((i) => HomeProvider()),
+    Bind.lazySingleton((i) => GetPermissionsDatasource(
+          preferences: i.get<SharedPreferencesDriver>(),
+        )),
+    Bind.lazySingleton((i) => GetPermissionsRepository(
+          datasource: i.get<GetPermissionsDatasource>(),
+        )),
+    Bind.lazySingleton((i) => GetPermissionsUsecase(
+          repository: i.get<GetPermissionsRepository>(),
+        )),
+    Bind.lazySingleton((i) => SetPermissionsDatasource(
+          preferences: i.get<SharedPreferencesDriver>(),
+        )),
+    Bind.lazySingleton((i) => SetPermissionsRepository(
+          datasource: i.get<SetPermissionsDatasource>(),
+        )),
+    Bind.lazySingleton((i) => SetPermissionsUsecase(
+          repository: i.get<SetPermissionsRepository>(),
+        )),
+    Bind.lazySingleton((i) => HomeStore(
+          setPermissionsUsecase: i.get<ISetPermissionsUsecase>(),
+          getPermissionsUsecase: i.get<IGetPermissionsUsecase>(),
+        )),
   ];
 
   @override

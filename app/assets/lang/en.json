@@ -1,4 +1,7 @@
 {
+    "splash": {
+        "name": "EAQ"
+    },
     "welcome":{
         "name": "Welcome",
         "title": "Thank you for installing the EAQ Brasil Banda Larga app",
@@ -58,6 +61,7 @@
             { "label": "Speedometer"},
             { "label": "Summary"},
             { "label": "Historic"}
-        ]
+        ],
+        "button": "Permissions Revoke"
     }
 }

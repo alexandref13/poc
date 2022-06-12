@@ -1,8 +1,8 @@
 import '../../../dependencies/dependencies.dart';
 
-class OnboardingProvider extends NotifierStore<Exception, PermissionsEntity>
+class HomeStore extends NotifierStore<Exception, PermissionsEntity>
     with Disposable {
-  OnboardingProvider({
+  HomeStore({
     required this.getPermissionsUsecase,
     required this.setPermissionsUsecase,
   }) : super(PermissionsEntity());
@@ -31,7 +31,7 @@ class OnboardingProvider extends NotifierStore<Exception, PermissionsEntity>
     await setPermissionsUsecase(permissions: permissions).then((value) {
       value.fold(
         (l) => setError(l),
-        (r) => update(PermissionsEntity()),
+        (r) => update(permissions),
       );
       setLoading(false);
     });
