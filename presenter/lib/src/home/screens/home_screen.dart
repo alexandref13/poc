@@ -14,7 +14,17 @@ class HomeScreen extends StatelessWidget {
     return DefaultScreen(
       title: L10N(context).text(_screen)['name'],
       onBackPressed: () => Modular.to.navigate(_backScreen),
-      isBottomNavigation: true,
+      navigationItens: [
+        BottomNavigationBarItem(
+            icon: const Icon(Icons.home),
+            label: L10N(context).text(_screen)['navigation'][0]['label']),
+        BottomNavigationBarItem(
+            icon: const Icon(Icons.home),
+            label: L10N(context).text(_screen)['navigation'][1]['label']),
+        BottomNavigationBarItem(
+            icon: const Icon(Icons.home),
+            label: L10N(context).text(_screen)['navigation'][2]['label']),
+      ],
       children: [
         const SizedBox(height: 64),
         Text(

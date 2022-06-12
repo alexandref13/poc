@@ -53,6 +53,11 @@
     "home": {
         "name": "Home",
         "paragraph": "Parabéns você acessou o app EAQ Brasil Banda Larga",
-        "permission": "Alterar permissões"
+        "permission": "Alterar permissões",
+        "navigation": [
+            { "label": "Velocímetro"},
+            { "label": "Resumo"},
+            { "label": "Histórico"}
+        ]
     }
 }

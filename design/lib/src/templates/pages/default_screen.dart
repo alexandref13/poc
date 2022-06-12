@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-import '../../../dependencies/dependencies.dart';
 import '../../sizes/sizes.dart';
 import '../../assets/assets.dart';
 
@@ -9,24 +8,23 @@ class DefaultScreen extends StatelessWidget {
   DefaultScreen({
     Key? key,
     this.title = 'Page Title',
-    this.isBottomNavigation = false,
     this.isBackground = true,
     this.children,
     this.onBackPressed,
+    this.navigationItens,
     String? backgroundPath,
   })  : _backgroundPath = backgroundPath ?? Assets.background.path,
         super(key: key);
 
   final String title;
-  final bool isBottomNavigation;
   final bool isBackground;
   final List<Widget>? children;
   final Function? onBackPressed;
 
   final String _backgroundPath;
+  final List<BottomNavigationBarItem>? navigationItens;
 
   void navigateToBack() => onBackPressed?.call() ?? exit(0);
-      //backRoute != null ? Modular.to.navigate(backRoute!) : exit(0);
 
   @override
   Widget build(BuildContext context) {
@@ -59,16 +57,7 @@ class DefaultScreen extends StatelessWidget {
               ),
             ],
           ),
-          bottomNavigationBar: isBottomNavigation
-              ? BottomNavigationBar(items: [
-                  BottomNavigationBarItem(
-                      icon: const Icon(Icons.home),
-                      label: L10N(context).text('welcome')['name']),
-                  BottomNavigationBarItem(
-                      icon: const Icon(Icons.home),
-                      label: L10N(context).text('welcome')['name']),
-                ])
-              : null,
+          bottomNavigationBar: navigationItens != null ? BottomNavigationBar(items: navigationItens!) : null,
           body: Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.all(Dots.p16.value),

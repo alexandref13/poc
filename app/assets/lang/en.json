@@ -53,6 +53,11 @@
     "home": {
         "name": "Home",
         "paragraph": "Congratulations you have accessed the EAQ Brasil Banda Larga app",
-        "permission": "Change permissions"
+        "permission": "Change permissions",
+        "navigation": [
+            { "label": "Speedometer"},
+            { "label": "Summary"},
+            { "label": "Historic"}
+        ]
     }
 }

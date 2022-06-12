@@ -8,7 +8,7 @@ export 'package:flutter_dotenv/flutter_dotenv.dart';
 export 'package:connectivity_plus/connectivity_plus.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 export 'package:flutter_localizations/flutter_localizations.dart';
-export 'package:flutter_modular/flutter_modular.dart';
+
 
 
 /// Firebase Dependencies

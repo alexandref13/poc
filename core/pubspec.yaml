@@ -25,8 +25,6 @@ dependencies:
   firebase_auth: ^3.3.18
   cloud_firestore: ^3.1.17
 
-  flutter_modular: ^5.0.2
-
   flutter_localizations:
     sdk: flutter
 

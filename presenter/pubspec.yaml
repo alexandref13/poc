@@ -16,6 +16,8 @@ dependencies:
   design:
     path: ../design
 
+  flutter_modular: ^5.0.2
+
   flutter_triple: ^1.2.7+2
   flutter_riverpod:
 

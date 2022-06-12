@@ -10,8 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  core:
-    path: ../core
   intl:
   google_fonts:
 
