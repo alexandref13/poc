@@ -11,8 +11,8 @@ class DefaultScreen extends StatelessWidget {
     this.title = 'Page Title',
     this.isBottomNavigation = false,
     this.isBackground = true,
-    this.backRoute,
     this.children,
+    this.onBackPressed,
     String? backgroundPath,
   })  : _backgroundPath = backgroundPath ?? Assets.background.path,
         super(key: key);
@@ -21,12 +21,12 @@ class DefaultScreen extends StatelessWidget {
   final bool isBottomNavigation;
   final bool isBackground;
   final List<Widget>? children;
-  final String? backRoute;
+  final Function? onBackPressed;
 
   final String _backgroundPath;
 
-  void navigateToBack() =>
-      backRoute != null ? Modular.to.navigate(backRoute!) : exit(0);
+  void navigateToBack() => onBackPressed?.call() ?? exit(0);
+      //backRoute != null ? Modular.to.navigate(backRoute!) : exit(0);
 
   @override
   Widget build(BuildContext context) {

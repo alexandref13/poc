@@ -13,7 +13,6 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultScreen(
       title: L10N(context).text(_screen)['name'],
-      backRoute: _backScreen,
       children: [
         const SizedBox(height: 32),
         Text(
