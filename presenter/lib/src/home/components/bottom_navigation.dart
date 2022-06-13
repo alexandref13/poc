@@ -7,8 +7,8 @@ class BottomNavigation extends StatelessWidget {
   BottomNavigation({
     Key? key,
     required String screen,
-  }) : _screen = screen,
-      super(key: key);
+  })  : _screen = screen,
+        super(key: key);
 
   final store = Modular.get<HomeStore>();
 
@@ -16,15 +16,16 @@ class BottomNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final items = [
       BottomNavigationBarItem(
-          icon: IconsPallete.speedometer.icon,
+          icon: LightIconsPallete.speedometer.icon,
           label: L10N(context).text(_screen)['navigation'][0]['label']),
       BottomNavigationBarItem(
-          icon: IconsPallete.history.icon,
+          icon: LightIconsPallete.history.icon,
           label: L10N(context).text(_screen)['navigation'][1]['label']),
       BottomNavigationBarItem(
-          icon: IconsPallete.configs.icon,
+          icon: LightIconsPallete.configs.icon,
           label: L10N(context).text(_screen)['navigation'][2]['label']),
     ];
     return TripleBuilder(

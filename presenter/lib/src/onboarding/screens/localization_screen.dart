@@ -18,19 +18,19 @@ class LocalizationScreen extends StatelessWidget {
         Heights.h32.value,
         Text(
           L10N(context).text(_screen)['content'][0]['paragraph'],
-          style: FontStyles.paragraphSmall.getText,
+          style: LightFontStyles.paragraphSmall.getText,
           textAlign: TextAlign.center,
         ),
         Heights.h16.value,
         Text(
           L10N(context).text(_screen)['content'][1]['paragraph'],
-          style: FontStyles.paragraphSmall.getText,
+          style: LightFontStyles.paragraphSmall.getText,
           textAlign: TextAlign.center,
         ),
         Heights.h16.value,
         Text(
           L10N(context).text(_screen)['content'][2]['paragraph'],
-          style: FontStyles.paragraphSmall.getText,
+          style: LightFontStyles.paragraphSmall.getText,
           textAlign: TextAlign.center,
         ),
         const Spacer(),

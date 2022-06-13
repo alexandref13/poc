@@ -16,13 +16,13 @@ class OnboardingScreen extends StatelessWidget {
         Heights.h32.value,
         Text(
           L10N(context).text(_screen)['title'],
-          style: FontStyles.headingSmall.getText,
+          style: LightFontStyles.headingSmall.getText,
           textAlign: TextAlign.center,
         ),
         Heights.h64.value,
         Text(
           L10N(context).text(_screen)['description'],
-          style: FontStyles.paragraphSmall.getText,
+          style: LightFontStyles.paragraphSmall.getText,
           textAlign: TextAlign.center,
         ),
         const Spacer(),

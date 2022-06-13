@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
           heightFactor: Dots.p12.value,
           child: Text(
             L10N(context).text(_screen)['name'],
-            style: FontStyles.headingLarge.getText,
+            style: LightFontStyles.headingLarge.getText,
             textAlign: TextAlign.center,
           ),
         ),

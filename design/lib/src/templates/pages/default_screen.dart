@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../sizes/sizes.dart';
 import '../../assets/assets.dart';
+import '../../themes/themes.dart';
 
 class DefaultScreen extends StatelessWidget {
   DefaultScreen({
@@ -15,6 +16,7 @@ class DefaultScreen extends StatelessWidget {
     this.onBackPressed,
     this.bottomNavigationBar,
     String? backgroundPath,
+    this.theme,
   })  : _backgroundPath = backgroundPath ?? Assets.background.path,
         super(key: key);
 
@@ -28,6 +30,9 @@ class DefaultScreen extends StatelessWidget {
   final String _backgroundPath;
   final Widget? bottomNavigationBar;
 
+  // ignore: prefer_typing_uninitialized_variables
+  final theme;
+
   void navigateToBack() => onBackPressed?.call() ?? exit(0);
 
   @override
@@ -39,14 +44,15 @@ class DefaultScreen extends StatelessWidget {
         return false;
       },
       child: Scaffold(
-          appBar: title != null || name != null ? AppBar(
+          appBar: title != null || name != null
+              ? AppBar(
                   title: name ?? Text(title!),
                   centerTitle: true,
                   leading: Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: Dots.p8.value,
                     ),
-                    child: Image(image: AssetImage(Assets.anatel.path)),
+                    child: LightIconsPallete.anatel.icon,
                   ),
                   leadingWidth: Dots.p48.value,
                   actions: [
@@ -60,7 +66,8 @@ class DefaultScreen extends StatelessWidget {
                       ),
                     ),
                   ],
-                ) : null,
+                )
+              : null,
           bottomNavigationBar: bottomNavigationBar,
           body: Container(
             width: MediaQuery.of(context).size.width,
@@ -73,12 +80,13 @@ class DefaultScreen extends StatelessWidget {
                     ),
                   )
                 : null,
-            child: body ?? Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: children!,
-            ),
+            child: body ??
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: children!,
+                ),
           )),
     );
   }

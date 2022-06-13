@@ -1,13 +1,8 @@
+export 'asset_svg.dart';
+export 'assets_enum.dart';
 
-export 'svg_widget.dart';
+import 'assets_enum.dart';
 
-enum Assets{
-  anatel,
-  anatelIcon,
-  eaq,
-  eaqIcon,
-  background,
-}
 
 extension AssetsExtension on Assets{
   String get path{

@@ -36,7 +36,7 @@ class _GrantPermissionsScreenState extends State<GrantPermissionsScreen> {
         Heights.h32.value,
         Text(
           L10N(context).text(_screen)['description'],
-          style: FontStyles.paragraphSmall.getText,
+          style: LightFontStyles.paragraphSmall.getText,
           textAlign: TextAlign.center,
         ),
         Heights.h32.value,

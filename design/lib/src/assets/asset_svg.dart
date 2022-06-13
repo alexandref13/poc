@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../dependencies/dependencies.dart';
 import '../sizes/sizes.dart';
 
-class SvgWidget extends StatelessWidget {
-  SvgWidget(
+class AssetSvg extends StatelessWidget {
+  AssetSvg(
     this.path, {
     Key? key,
     double? size,

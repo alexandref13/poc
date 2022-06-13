@@ -19,7 +19,7 @@ class PermissionsScreen extends StatelessWidget {
         Heights.h32.value,
         Text(
           L10N(context).text(_screen)['description'],
-          style: FontStyles.paragraphSmall.getText,
+          style: LightFontStyles.paragraphSmall.getText,
           textAlign: TextAlign.center,
         ),
 
@@ -27,25 +27,25 @@ class PermissionsScreen extends StatelessWidget {
 
         Text(
           L10N(context).text(_screen)['content'][0]['description'],
-          style: FontStyles.paragraphSmall.getText,
+          style: LightFontStyles.paragraphSmall.getText,
           textAlign: TextAlign.center,
         ),
         Heights.h16.value,
         Text(
           L10N(context).text(_screen)['content'][1]['description'],
-          style: FontStyles.paragraphSmall.getText,
+          style: LightFontStyles.paragraphSmall.getText,
           textAlign: TextAlign.center,
         ),
         Heights.h16.value,
         Text(
           L10N(context).text(_screen)['content'][2]['description'],
-          style: FontStyles.paragraphSmall.getText,
+          style: LightFontStyles.paragraphSmall.getText,
           textAlign: TextAlign.center,
         ),
         Heights.h32.value,
         Text(
           L10N(context).text(_screen)['text'],
-          style: FontStyles.paragraphSmall.getText,
+          style: LightFontStyles.paragraphSmall.getText,
           textAlign: TextAlign.center,
         ),
         const Spacer(),

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:presenter/presenter.dart';
 
-
-
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
 

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../sizes/sizes.dart';
 
-enum FontStyles {
+
+enum LightFontStyles{
   headingDisplay,
   headingXLarge,
   headingLarge,
@@ -20,120 +21,120 @@ enum FontStyles {
   logoSmall
 }
 
-String defaultFont = 'Cabin';
-String logoFont = 'Poppins';
+String _defaultFont = 'Cabin';
+String _logoFont = 'Poppins';
 
-extension FontStylesExt on FontStyles {
+extension LightFontStylesExt on LightFontStyles {
   TextStyle get getText {
     switch (this) {
-      case FontStyles.headingDisplay:
+      case LightFontStyles.headingDisplay:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p96.value,
           fontWeight: FontWeight.w700,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.headingXLarge:
+      case LightFontStyles.headingXLarge:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p64.value,
           fontWeight: FontWeight.w700,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.headingLarge:
+      case LightFontStyles.headingLarge:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p48.value,
           fontWeight: FontWeight.w700,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.headingMedium:
+      case LightFontStyles.headingMedium:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p32.value,
           fontWeight: FontWeight.w700,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.headingSmall:
+      case LightFontStyles.headingSmall:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p24.value,
           fontWeight: FontWeight.w700,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.headingXSmall:
+      case LightFontStyles.headingXSmall:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p16.value,
           fontWeight: FontWeight.normal,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.subtitleLarge:
+      case LightFontStyles.subtitleLarge:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p32.value,
           fontWeight: FontWeight.w500,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.subtitleSmall:
+      case LightFontStyles.subtitleSmall:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p24.value,
           fontWeight: FontWeight.w500,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.paragraphLarge:
+      case LightFontStyles.paragraphLarge:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p20.value,
           fontWeight: FontWeight.w400,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.paragraphSmall:
+      case LightFontStyles.paragraphSmall:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p16.value,
           fontWeight: FontWeight.w400,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.caption:
+      case LightFontStyles.caption:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p16.value,
           fontWeight: FontWeight.w400,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.captionSmall:
+      case LightFontStyles.captionSmall:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p12.value,
           fontWeight: FontWeight.w400,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.button:
+      case LightFontStyles.button:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p16.value,
           fontWeight: FontWeight.w600,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.logo:
+      case LightFontStyles.logo:
         return TextStyle(
-          fontFamily: logoFont,
+          fontFamily: _logoFont,
           fontSize: Dots.p32.value,
           fontWeight: FontWeight.w600,
           letterSpacing: Dots.p0.value,
         );
-      case FontStyles.logoSmall:
+      case LightFontStyles.logoSmall:
         return TextStyle(
-          fontFamily: logoFont,
+          fontFamily: _logoFont,
           fontSize: Dots.p20.value,
           fontWeight: FontWeight.w600,
           letterSpacing: Dots.p0.value,
         );
       default:
         return TextStyle(
-          fontFamily: defaultFont,
+          fontFamily: _defaultFont,
           fontSize: Dots.p16.value,
           fontWeight: FontWeight.w400,
           letterSpacing: Dots.p0.value,

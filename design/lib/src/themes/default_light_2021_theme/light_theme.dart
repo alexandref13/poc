@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'font_styles.dart';
+import 'light_font_styles.dart';
 import 'light_pallete.dart';
 import '../../sizes/sizes.dart';
 
-export 'font_styles.dart';
+export 'light_font_styles.dart';
 export 'light_pallete.dart';
-export 'icons_pallete.dart';
+export 'light_icons_pallete.dart';
 
 
 class LightTheme {
@@ -30,21 +30,21 @@ class LightTheme {
         isDense: true,
         iconColor: LightPallete.grayPrimary.shade200,
         fillColor: LightPallete.grayPrimary.shade700,
-        counterStyle: FontStyles.paragraphLarge.getText,
-        // labelStyle: FontStyles.paragraphSmall.getText.copyWith(
+        counterStyle: LightFontStyles.paragraphLarge.getText,
+        // labelStyle: LightFontStyles.paragraphSmall.getText.copyWith(
         //   color: LightPallete.grayPrimary.shade200,
         // ),
-        labelStyle: FontStyles.paragraphSmall.getText.apply(
+        labelStyle: LightFontStyles.paragraphSmall.getText.apply(
           color: LightPallete.grayPrimary.shade200,
           letterSpacingFactor: 2,
         ),
-        hintStyle: FontStyles.paragraphSmall.getText.copyWith(
+        hintStyle: LightFontStyles.paragraphSmall.getText.copyWith(
           color: LightPallete.grayPrimary.shade200,
         ),
-        helperStyle: FontStyles.caption.getText.copyWith(
+        helperStyle: LightFontStyles.caption.getText.copyWith(
           color: LightPallete.grayPrimary.shade200,
         ),
-        floatingLabelStyle: FontStyles.paragraphLarge.getText,
+        floatingLabelStyle: LightFontStyles.paragraphLarge.getText,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.all(Dots.p16.value),
 
@@ -166,7 +166,7 @@ class LightTheme {
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
           (Set<MaterialState> states) {
-        return FontStyles.button.getText;
+        return LightFontStyles.button.getText;
       }),
       backgroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
@@ -205,7 +205,7 @@ class LightTheme {
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
           (Set<MaterialState> states) {
-        return FontStyles.button.getText;
+        return LightFontStyles.button.getText;
       }),
       backgroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
@@ -245,7 +245,7 @@ class LightTheme {
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
           (Set<MaterialState> states) {
-        return FontStyles.button.getText;
+        return LightFontStyles.button.getText;
       }),
       foregroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {

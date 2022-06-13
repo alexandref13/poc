@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'font_styles.dart';
+import 'dark_font_styles.dart';
 import 'dark_pallete.dart';
 import '../../sizes/sizes.dart';
 
-export 'font_styles.dart';
+export 'dark_font_styles.dart';
 export 'dark_pallete.dart';
+export 'dark_icons_pallete.dart';
 
 
 class DarkTheme {
@@ -29,21 +30,21 @@ class DarkTheme {
         isDense: true,
         iconColor: DarkPallete.grayPrimary.shade200,
         fillColor: DarkPallete.grayPrimary.shade700,
-        counterStyle: FontStyles.paragraphLarge.getText,
-        // labelStyle: FontStyles.paragraphSmall.getText.copyWith(
+        counterStyle: DarkFontStyles.paragraphLarge.getText,
+        // labelStyle: DarkFontStyles.paragraphSmall.getText.copyWith(
         //   color: DarkPallete.grayPrimary.shade200,
         // ),
-        labelStyle: FontStyles.paragraphSmall.getText.apply(
+        labelStyle: DarkFontStyles.paragraphSmall.getText.apply(
           color: DarkPallete.grayPrimary.shade200,
           letterSpacingFactor: 2,
         ),
-        hintStyle: FontStyles.paragraphSmall.getText.copyWith(
+        hintStyle: DarkFontStyles.paragraphSmall.getText.copyWith(
           color: DarkPallete.grayPrimary.shade200,
         ),
-        helperStyle: FontStyles.caption.getText.copyWith(
+        helperStyle: DarkFontStyles.caption.getText.copyWith(
           color: DarkPallete.grayPrimary.shade200,
         ),
-        floatingLabelStyle: FontStyles.paragraphLarge.getText,
+        floatingLabelStyle: DarkFontStyles.paragraphLarge.getText,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.all(Dots.p16.value),
 
@@ -165,7 +166,7 @@ class DarkTheme {
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
           (Set<MaterialState> states) {
-        return FontStyles.button.getText;
+        return DarkFontStyles.button.getText;
       }),
       backgroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
@@ -204,7 +205,7 @@ class DarkTheme {
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
           (Set<MaterialState> states) {
-        return FontStyles.button.getText;
+        return DarkFontStyles.button.getText;
       }),
       backgroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
@@ -244,7 +245,7 @@ class DarkTheme {
       }),
       textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
           (Set<MaterialState> states) {
-        return FontStyles.button.getText;
+        return DarkFontStyles.button.getText;
       }),
       foregroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
