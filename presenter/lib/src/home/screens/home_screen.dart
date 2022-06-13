@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     return DefaultScreen(
-      title: TripleBuilder(
+      name: TripleBuilder(
         store: store.screenTitleStore,
         builder: (_, triple) {
           return Text(store.screenTitleStore.state);

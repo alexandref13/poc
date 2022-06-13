@@ -8,6 +8,7 @@ class DefaultScreen extends StatelessWidget {
   DefaultScreen({
     Key? key,
     this.title,
+    this.name,
     this.isBackground = true,
     this.children,
     this.body,
@@ -17,7 +18,8 @@ class DefaultScreen extends StatelessWidget {
   })  : _backgroundPath = backgroundPath ?? Assets.background.path,
         super(key: key);
 
-  final Widget? title;
+  final Widget? name;
+  final String? title;
   final bool isBackground;
   final List<Widget>? children;
   final Widget? body;
@@ -37,9 +39,8 @@ class DefaultScreen extends StatelessWidget {
         return false;
       },
       child: Scaffold(
-          appBar: title != null
-              ? AppBar(
-                  title: title!,
+          appBar: title != null || name != null ? AppBar(
+                  title: name ?? Text(title!),
                   centerTitle: true,
                   leading: Padding(
                     padding: EdgeInsets.symmetric(
@@ -59,8 +60,7 @@ class DefaultScreen extends StatelessWidget {
                       ),
                     ),
                   ],
-                )
-              : null,
+                ) : null,
           bottomNavigationBar: bottomNavigationBar,
           body: Container(
             width: MediaQuery.of(context).size.width,

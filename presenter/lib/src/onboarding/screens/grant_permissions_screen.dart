@@ -48,7 +48,7 @@ class _GrantPermissionsScreenState extends State<GrantPermissionsScreen> {
             PrimaryButton(
               isPrimary: false,
               child: Text(L10N(context).text(_screen)['not_grant']),
-              onPressed: () => _fetchOptions(_nextScreen, false),
+              onPressed: () => _fetchOptions(_backScreen, false),
             ),
             PrimaryButton(
               child: Text(L10N(context).text(_screen)['grant']),
