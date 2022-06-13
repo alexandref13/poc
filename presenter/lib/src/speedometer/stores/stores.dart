@@ -1,0 +1,1 @@
+export 'speedometer_store.dart';

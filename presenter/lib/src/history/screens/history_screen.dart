@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../dependencies/dependencies.dart';
 import '../stores/stores.dart';
 
-class ConfigsScreen extends StatefulWidget{
-  const ConfigsScreen({Key? key}) : super(key: key);
+class HistoryScreen extends StatefulWidget{
+  const HistoryScreen({Key? key}) : super(key: key);
 
   @override
-  State<ConfigsScreen> createState() => _ConfigsScreenState();
+  State<HistoryScreen> createState() => _HistoryScreenState();
 }
 
-class _ConfigsScreenState extends State<ConfigsScreen> {
+class _HistoryScreenState extends State<HistoryScreen> {
   @override
   void initState() {
     super.initState();
@@ -24,9 +24,9 @@ class _ConfigsScreenState extends State<ConfigsScreen> {
     super.dispose();
   }
 
-  final store = Modular.get<ConfigsStore>();
+  final store = Modular.get<HistoryStore>();
 
-  final String _screen = 'configs';
+  final String _screen = 'history';
   final String _backScreen = '/welcome';
 
   removePermissions() {

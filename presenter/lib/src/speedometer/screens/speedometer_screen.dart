@@ -3,17 +3,21 @@ import 'package:flutter/material.dart';
 import '../../../dependencies/dependencies.dart';
 import '../stores/stores.dart';
 
-class ConfigsScreen extends StatefulWidget{
-  const ConfigsScreen({Key? key}) : super(key: key);
+class SpeedometerScreen extends StatefulWidget {
+  const SpeedometerScreen({Key? key}) : super(key: key);
+
+  final String screen = 'speedometer';
 
   @override
-  State<ConfigsScreen> createState() => _ConfigsScreenState();
+  State<SpeedometerScreen> createState() => _SpeedometerScreenState();
 }
 
-class _ConfigsScreenState extends State<ConfigsScreen> {
+class _SpeedometerScreenState extends State<SpeedometerScreen> {
   @override
   void initState() {
     super.initState();
+
+    _screen = widget.screen;
 
     store.getPermissions();
   }
@@ -24,9 +28,9 @@ class _ConfigsScreenState extends State<ConfigsScreen> {
     super.dispose();
   }
 
-  final store = Modular.get<ConfigsStore>();
+  final store = Modular.get<SpeedometerStore>();
 
-  final String _screen = 'configs';
+  String? _screen;
   final String _backScreen = '/welcome';
 
   removePermissions() {
@@ -42,10 +46,10 @@ class _ConfigsScreenState extends State<ConfigsScreen> {
       //title: L10N(context).text(_screen)['name'],
       children: [
         Heights.h64.value,
-        Text(L10N(context).text(_screen)['name']),
+        Text(L10N(context).text(_screen!)['name']),
         Heights.h64.value,
         RedButton(
-          child: Text(L10N(context).text(_screen)['button']),
+          child: Text(L10N(context).text(_screen!)['button']),
           onPressed: () => removePermissions(),
         )
       ],

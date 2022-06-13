@@ -35,8 +35,8 @@ class _SplashScreenState extends State<SplashScreen> {
   final store = Modular.get<OnboardingStore>();
 
   final String _screen = 'splash';
-  final String _nextScreen = '/welcome';
-  final String _homeScreen = '/home';
+  final String _nextScreen = '/welcome/';
+  final String _homeScreen = '/home/';
 
   @override
   Widget build(BuildContext context) {

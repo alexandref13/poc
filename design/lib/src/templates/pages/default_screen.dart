@@ -10,19 +10,21 @@ class DefaultScreen extends StatelessWidget {
     this.title,
     this.isBackground = true,
     this.children,
+    this.body,
     this.onBackPressed,
-    this.navigationItens,
+    this.bottomNavigationBar,
     String? backgroundPath,
   })  : _backgroundPath = backgroundPath ?? Assets.background.path,
         super(key: key);
 
-  final String? title;
+  final Widget? title;
   final bool isBackground;
   final List<Widget>? children;
+  final Widget? body;
   final Function? onBackPressed;
 
   final String _backgroundPath;
-  final List<BottomNavigationBarItem>? navigationItens;
+  final Widget? bottomNavigationBar;
 
   void navigateToBack() => onBackPressed?.call() ?? exit(0);
 
@@ -35,29 +37,31 @@ class DefaultScreen extends StatelessWidget {
         return false;
       },
       child: Scaffold(
-          appBar: title != null ? AppBar(
-            title: Text(title!),
-            centerTitle: true,
-            leading: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: Dots.p8.value,
-              ),
-              child: Image(image: AssetImage(Assets.anatel.path)),
-            ),
-            leadingWidth: Dots.p48.value,
-            actions: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: Dots.p8.value,
-                ),
-                child: Image(
-                  image: AssetImage(Assets.eaq.path),
-                  width: Dots.p48.value,
-                ),
-              ),
-            ],
-          ) : null,
-          bottomNavigationBar: navigationItens != null ? BottomNavigationBar(items: navigationItens!) : null,
+          appBar: title != null
+              ? AppBar(
+                  title: title!,
+                  centerTitle: true,
+                  leading: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: Dots.p8.value,
+                    ),
+                    child: Image(image: AssetImage(Assets.anatel.path)),
+                  ),
+                  leadingWidth: Dots.p48.value,
+                  actions: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: Dots.p8.value,
+                      ),
+                      child: Image(
+                        image: AssetImage(Assets.eaq.path),
+                        width: Dots.p48.value,
+                      ),
+                    ),
+                  ],
+                )
+              : null,
+          bottomNavigationBar: bottomNavigationBar,
           body: Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.all(Dots.p16.value),
@@ -69,7 +73,7 @@ class DefaultScreen extends StatelessWidget {
                     ),
                   )
                 : null,
-            child: Column(
+            child: body ?? Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
