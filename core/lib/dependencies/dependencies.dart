@@ -13,3 +13,6 @@ export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
+
+///Plugins Dependencies
+export 'package:network_types/network_types.dart';
