@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../dependencies/dependencies.dart';
 import '../stores/stores.dart';
 
-class ConfigsScreen extends StatefulWidget{
+class ConfigsScreen extends StatefulWidget {
   const ConfigsScreen({Key? key}) : super(key: key);
 
   @override
@@ -39,15 +39,60 @@ class _ConfigsScreenState extends State<ConfigsScreen> {
   @override
   Widget build(BuildContext context) {
     return OneColumnScreen(
-      //title: L10N(context).text(_screen)['name'],
       children: [
-        Heights.h64.value,
-        Text(L10N(context).text(_screen)['name']),
-        Heights.h64.value,
-        RedButton(
-          child: Text(L10N(context).text(_screen)['button']),
-          onPressed: () => removePermissions(),
-        )
+        DefaultListItem(
+          title: Text(L10N(context).text(_screen)['list'][7]['title']),
+          leading: const Icon(Icons.signal_wifi_4_bar_outlined),
+          trailing: Text(L10N(context).text(_screen)['list'][7]['connection'][0]['type']),
+        ),
+        DefaultListItem(
+          title: Text(L10N(context).text(_screen)['list'][2]['title']),
+          subtitle: Text(L10N(context).text(_screen)['list'][2]['subtitle']),
+          leading: const Icon(Icons.bar_chart_outlined),
+          trailing:
+              Text('0.00 ${L10N(context).text(_screen)['list'][2]['leading']}'),
+        ),
+        DefaultListItem(
+          title: Text(L10N(context).text(_screen)['list'][3]['title']),
+          subtitle: Text(L10N(context).text(_screen)['list'][3]['subtitle']),
+          leading: const Icon(Icons.signal_cellular_off_outlined),
+          trailing: const Text('1GB'),
+        ),
+        DefaultListItem(
+          title: Text(L10N(context).text(_screen)['list'][4]['title']),
+          subtitle: Text(L10N(context).text(_screen)['list'][4]['subtitle']),
+          leading: const Icon(Icons.perm_data_setting_outlined),
+          trailing: const Text('30'),
+        ),
+        DefaultListItem(
+          title: Text(L10N(context).text(_screen)['list'][1]['title']),
+          subtitle: Text(L10N(context).text(_screen)['list'][1]['subtitle']),
+          leading: const Icon(Icons.calendar_month_outlined),
+        ),
+        DefaultListItem(
+          title: Text(L10N(context).text(_screen)['list'][5]['title']),
+          subtitle: Text(L10N(context).text(_screen)['list'][5]['subtitle']),
+          leading: const Icon(Icons.perm_device_info_rounded),
+        ),
+        DefaultListItem(
+          title: Text(L10N(context).text(_screen)['list'][0]['title']),
+          leading: const Icon(Icons.palette_outlined),
+          trailing: PrimaryButton(
+            child: Text(L10N(context).text(_screen)['list'][0]['disabled']),
+            onPressed: () {},
+          ),
+        ),
+        DefaultListItem(
+          title: Text(L10N(context).text(_screen)['list'][6]['title']),
+          subtitle: Text(L10N(context).text(_screen)['list'][6]['subtitle']),
+          leading: const Icon(Icons.lock_reset_outlined),
+          trailing: RedButton(
+            child: Text(L10N(context).text(_screen)['list'][6]['button']),
+            onPressed: () => removePermissions(),
+          ),
+        ),
+
+        Heights.h32.value,
       ],
     );
   }

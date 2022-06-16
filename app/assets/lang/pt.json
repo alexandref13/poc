@@ -65,7 +65,25 @@
     },
     "configs":{
         "name": "Ajustes",
-        "button": "Remover Permissões"
+        "version": "Versão:",
+        "compilation": "Compilação:",
+        "terms": "Termos de uso",
+        "list": [
+            { "title": "Tema Escuro", "disabled": "Habilitar", "enabled": "Desabilitar" },
+            { "title": "Histórico de medições", "subtitle": "Limpar todo o histórico de medições realizado."},
+            { "title": "Dados Utilizados", "subtitle": "A quantidade de dados (excluindo WIFI) utilizada por este aplicativo desde o início do período mensal de cobrança.", "button": "Zerar Consumo", "leading": "bytes" },
+            { "title": "Limite de dados móveis", "subtitle": "A máxima quantidade de dados em Mega Bytes (excluindo WIFI) que este aplicativo pode usar no período mensal de cobrança."},
+            { "title": "Dia de zerar uso de dados", "subtitle": "Selecione o dia do mês que o contador da utilização dos dados móveis deve ser zerado."},
+            { "title": "Remover permissões", "subtitle": "Remova as permissões de utilização do serviço."},
+            { "title": "Resetar dados", "subtitle": "Apagar todos os dados.", "button": "Resetar"},
+            { "title": "Tipo de conexão", "connection": [
+                { "type": "Wifi"},
+                { "type": "5G"},
+                { "type": "4G"},
+                { "type": "3G"},
+                { "type": "2G"}
+            ]}
+        ]
     },
     "speedometer":{
         "name": "Velocimetro",

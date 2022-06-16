@@ -65,14 +65,32 @@
     },
     "configs":{
         "name": "Configs",
-        "button": "Permissions Revoke"
+        "version": "Version:",
+        "compilation": "Compilation:",
+        "terms": "Terms of use",
+        "list": [
+            { "title": "Dark Theme", "disabled": "enable", "enabled": "Disable" },
+            { "title": "Measurement history", "subtitle": "Clear all measurement history performed."},
+            { "title": "Data used", "subtitle": "The amount of data (excluding WIFI) used by this app since the beginning of the monthly billing period.", "button": "Consumption reset", "leading": "bytes" },
+            { "title": "Mobile Data Limit", "subtitle": "The maximum amount of data in Mega Bytes (excluding WIFI) that this app can use in the monthly billing period."},
+            { "title": "Data usage reset day", "subtitle": "Select the day of the month that the mobile data usage counter should be reset."},
+            { "title": "Permissions revoke", "subtitle": "Remove service usage permissions."},
+            { "title": "Reset data", "subtitle": "Reset all data.", "button": "Reset"},
+            { "title": "Connection type", "connection": [
+                { "type": "Wifi"},
+                { "type": "5G"},
+                { "type": "4G"},
+                { "type": "3G"},
+                { "type": "2G"}
+            ]}
+        ]
     },
     "speedometer":{
         "name": "Speedometer",
-        "button": "Remover Permissões"
+        "button": "Permissions revoke"
     },
     "history":{
         "name": "History",
-        "button": "Remover Permissões"
+        "button": "Permissions revoke"
     }
 }

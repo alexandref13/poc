@@ -12,8 +12,13 @@ class OneColumnScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      child: Column(
-        children: children!,
+      child: ListView(
+        children: [
+          Column(
+            mainAxisSize: MainAxisSize.max,
+            children: children!.map((item) => item).toList(),
+          ),
+        ],
       ),
     );
   }
