@@ -1,16 +1,6 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
 
-enum NetworkStatus {
-  unreachable,
-  wifi,
-  mobile2G,
-  mobile3G,
-  mobile4G,
-  mobile5G,
-  otherMobile
-}
-
 class NetworkTypes {
   static NetworkTypes? _instance;
 
@@ -24,36 +14,40 @@ class NetworkTypes {
 
   static const EventChannel _eventChannel = EventChannel('network_types_event');
 
-  Stream<NetworkStatus>? _onNetworkStateChanged;
+  Stream<Map<String, String>>? _onNetworkStateChanged;
 
-  Stream<NetworkStatus>? get onNetworkStateChanged{
-    _onNetworkStateChanged = _eventChannel.receiveBroadcastStream().map((event) => event.toString()).map(_convertFromState);
+  Stream<Map<String, String>>? get onNetworkStateChanged {
+    _onNetworkStateChanged = _eventChannel
+        .receiveBroadcastStream()
+        .map((event) => event.toString())
+        .map(_convertFromState);
     return _onNetworkStateChanged;
   }
 
-  Future<NetworkStatus> currentNetworkStatus() async {
+  Future<Map<String, String>> currentNetworkStatus() async {
     final String? state = await _channel.invokeMethod("networkStatus");
     return _convertFromState(state);
   }
 
-  NetworkStatus _convertFromState(String? state) {
-    switch(state){
-      case "0":
-        return NetworkStatus.unreachable;
+  Map<String, String> _convertFromState(String? state) {
+    switch (state) {
       case "1":
-        return NetworkStatus.mobile2G;
+        return {"type": "Mobile 2G"};
       case "2":
-        return NetworkStatus.mobile3G;
+        return {"type": "Mobile 3G"};
       case "3":
-        return NetworkStatus.wifi;
+        return {"type": "Wifi"};
       case "4":
-        return NetworkStatus.mobile4G;
+        return {"type": "Mobile 4G"};
       case "5":
-        return NetworkStatus.mobile5G;
+        return {"type": "Mobile 5G"};
       case "6":
-        return NetworkStatus.otherMobile;
+        return {"type": "Other Mobile"};
+      case "7":
+        return {"type": "Bluetooth"};
+      case "0":
       default:
-        return NetworkStatus.unreachable;
+        return {"type": "Unknown"};
     }
   }
 }

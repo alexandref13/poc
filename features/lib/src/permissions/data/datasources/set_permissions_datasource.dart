@@ -1,7 +1,6 @@
+import '../../../../dependencies/dependencies.dart';
 import '../../domain/domain.dart';
-import 'package:core/core.dart';
-
-import '../models/permissions_model.dart';
+import '../models/models.dart';
 
 class SetPermissionsDatasource extends ISetPermissionsDatasource {
   final ISharedPreferencesDriver preferences;

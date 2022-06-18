@@ -1,6 +1,6 @@
-import 'package:core/core.dart';
+import '../../../../dependencies/dependencies.dart';
 
-import '../entities/permissions_entity.dart';
+import '../entities/entities.dart';
 
 abstract class ISetPermissionsDatasource {
   Future<Either<Exception, Unit>> call({required PermissionsEntity permissions});

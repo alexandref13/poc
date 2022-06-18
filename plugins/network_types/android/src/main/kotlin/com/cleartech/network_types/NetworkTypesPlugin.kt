@@ -78,7 +78,7 @@ class NetworkTypesPlugin: FlutterPlugin, MethodCallHandler,EventChannel.StreamHa
 private  class NetworkBroadcastReceiver(val events: EventChannel.EventSink?,val connectivityManager: ConnectivityManager,val context: Context): BroadcastReceiver() {
   @RequiresApi(Build.VERSION_CODES.N)
   override fun onReceive(p0: Context?, p1: Intent?) {
-    print("Mudanças de rede")
+    //print("Mudanças de rede")
     Log.d("aaa","cesdddddddfslfsjfssfjdslkfjldsfjls")
     events?.success(getNetworkState(connectivityManager,context));
   }
@@ -112,6 +112,9 @@ private  fun getNetworkState(connectivityManager: ConnectivityManager, context: 
       }
       ConnectivityManager.TYPE_MOBILE,ConnectivityManager.TYPE_MOBILE_DUN,ConnectivityManager.TYPE_MOBILE_HIPRI -> {
         return getMobileNetworkType(context)
+      }
+      ConnectivityManager.TYPE_BLUETOOTH -> {
+        return NetworkState.bluetooth.ordinal.toString()
       }
       else -> return NetworkState.unReachable.ordinal.toString()
     }
@@ -172,5 +175,6 @@ private enum class NetworkState {
   wifi,
   mobile4G,
   mobile5G,
-  mobileOther
+  mobileOther,
+  bluetooth,
 }

@@ -1,4 +1,4 @@
 library presenter;
 
 export 'dependencies/dependencies.dart';
-export 'src/src.dart';
+export 'ui/ui.dart';

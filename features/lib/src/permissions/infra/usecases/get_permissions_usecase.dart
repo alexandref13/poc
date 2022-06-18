@@ -1,5 +1,4 @@
-import 'package:core/core.dart';
-
+import '../../../../dependencies/dependencies.dart';
 import '../../domain/domain.dart';
 
 class GetPermissionsUsecase implements IGetPermissionsUsecase {

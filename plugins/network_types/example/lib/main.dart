@@ -18,8 +18,8 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  String _networkStatus = 'Unknown';
-  late StreamSubscription<NetworkStatus> subscription;
+  String _networkStatus = 'unknown';
+  late StreamSubscription<Map<String, String>> subscription;
 
   @override
   void initState() {
@@ -27,12 +27,11 @@ class MyAppState extends State<MyApp> {
     _listenNetworkStatus();
   }
 
-  _listenNetworkStatus()async {
-    if(Platform.isAndroid) {
+  _listenNetworkStatus() async {
+    if (Platform.isAndroid) {
       await Permission.phone.request();
     }
     subscription = NetworkTypes().onNetworkStateChanged!.listen((event) {
-
       setState(() {
         _networkStatus = "$event";
       });
@@ -40,28 +39,29 @@ class MyAppState extends State<MyApp> {
   }
 
   _currentNetworkStatus() async {
-    if(Platform.isAndroid) {
+    if (Platform.isAndroid) {
       await Permission.phone.request();
     }
-    NetworkStatus status = await NetworkTypes().currentNetworkStatus();
-    switch(status) {
-      case NetworkStatus.unreachable:
+    Map<String, String> status = await NetworkTypes().currentNetworkStatus();
+    final String type = status['type']!;
+    switch (type) {
+      case "unknown":
       //unreachable
-      case NetworkStatus.wifi:
+      case "wifi":
       //wifi
-      case NetworkStatus.mobile2G:
+      case "mobile2G":
       //2g
-      case NetworkStatus.mobile3G:
+      case "mobile3G":
       //3g
-      case NetworkStatus.mobile4G:
+      case "mobile4G":
       //4g
-      case NetworkStatus.mobile5G:
+      case "mobile5G":
       //5h
-      case NetworkStatus.otherMobile:
+      case "otherMobile":
       //other
     }
     setState(() {
-      _networkStatus = status.toString() ;
+      _networkStatus = type;
     });
   }
 
