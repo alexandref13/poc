@@ -38,44 +38,18 @@ where:
 }
 
 createAFeature(){
-    #read -p "Digite o nome da feature: "$name_feature
-    #echo "Creating $name_feature"
-    #cd features/lib/src || exit
-        #arr=( $name_feature/{domain/{basic/{red,blue,green},blended/{yellow,orange,pink}},shape/{circle,square,cube},animals/{mammals/{platipus,bat,dog},reptiles/{snakes,crocodile,lizard}}} )
-        arr=( $name_feature/{domain/{datasources/{datasources}}} )
-        for i in "${arr[@]}"; do  mkdir -p "${i%/*}" && touch "$i"; done
-        #mkdir $name_feature
-        #cd $name_feature
-        #echo "Creating Domain..."
-        #mkdir domain
-        #cd domain
-        #touch datasources/datasources.dart
-        #touch entities/entities.dart
-        #touch repositories/repositories.dart
-        #touch usecases/usecases.dart
-        #touch domain.dart
-        #echo "export" >> "domain.dart"
-        #cd ..
-        #echo "Creating Data..."
-        #mkdir data
-        #cd data
-        #touch datasources/datasources.dart
-        #touch entities/entities.dart
-        #touch repositories/repositories.dart
-        #touch data.dart
-        #echo "export" >> "data.dart"
-        #cd ..
-        #echo "Creating Infra..."
-        #mkdir infra
-        #cd infra
-        #touch usecases/usecases.dart
-        #touch infra.dart
-        #echo "export" >> "infra.dart"
-        #cd ..
-        #touch "$name_feature.dart"
-        #echo "export" >> "$name_feature.dart"
-
-    #cd - >/dev/null
+    read -p "Digite o nome da feature: " feature
+    echo "Creating $feature"
+    cd features/lib/src || exit
+        mkdir -p $feature
+        srcdir="../../../tools/scripts/feature_model"
+        for f in ${srcdir}/*
+        do
+            cp -r $f $feature
+        done
+        cd $feature
+        mv "feature.dart" "$feature.dart"
+    cd - >/dev/null
 }
 
 runRun() {
