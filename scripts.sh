@@ -3,7 +3,7 @@
 error=false
 
 show_help() {
-    printf "usage: $0 [--help] [--test] [--test-changed] [--analyze] [--report] [--clean] [--get] [--storybook-build] [--run] [--build-fix]
+    printf "usage: $0 [--help] [--test] [--test-changed] [--analyze] [--report] [--clean] [--get] [--storybook-build] [--run] [--build-fix] [--feature]
 
 Tool for running useful commands on all Micro Apps.
 
@@ -29,10 +29,53 @@ where:
         Run for connected device
     --build-fix
         Fix build conflicts for IOS and MacOs
+    --feature
+        Create a new feature
     --help
         Print this message
 "
     exit 1
+}
+
+createAFeature(){
+    #read -p "Digite o nome da feature: "$name_feature
+    #echo "Creating $name_feature"
+    #cd features/lib/src || exit
+        #arr=( $name_feature/{domain/{basic/{red,blue,green},blended/{yellow,orange,pink}},shape/{circle,square,cube},animals/{mammals/{platipus,bat,dog},reptiles/{snakes,crocodile,lizard}}} )
+        arr=( $name_feature/{domain/{datasources/{datasources}}} )
+        for i in "${arr[@]}"; do  mkdir -p "${i%/*}" && touch "$i"; done
+        #mkdir $name_feature
+        #cd $name_feature
+        #echo "Creating Domain..."
+        #mkdir domain
+        #cd domain
+        #touch datasources/datasources.dart
+        #touch entities/entities.dart
+        #touch repositories/repositories.dart
+        #touch usecases/usecases.dart
+        #touch domain.dart
+        #echo "export" >> "domain.dart"
+        #cd ..
+        #echo "Creating Data..."
+        #mkdir data
+        #cd data
+        #touch datasources/datasources.dart
+        #touch entities/entities.dart
+        #touch repositories/repositories.dart
+        #touch data.dart
+        #echo "export" >> "data.dart"
+        #cd ..
+        #echo "Creating Infra..."
+        #mkdir infra
+        #cd infra
+        #touch usecases/usecases.dart
+        #touch infra.dart
+        #echo "export" >> "infra.dart"
+        #cd ..
+        #touch "$name_feature.dart"
+        #echo "export" >> "$name_feature.dart"
+
+    #cd - >/dev/null
 }
 
 runRun() {
@@ -202,6 +245,10 @@ fi
 case $1 in
 --help)
     show_help
+    ;;
+--feature)
+    # exclude hidden
+    createAFeature
     ;;
 --clean)
     rm -rf ".coverage"

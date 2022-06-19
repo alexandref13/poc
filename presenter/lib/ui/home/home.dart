@@ -35,6 +35,16 @@ class Home extends Module {
     Bind.lazySingleton((i) =>
         GetNetworkTypeUsecase(repository: i.get<GetNetworkTypeRepository>())),
 
+    ///GetDataConsumption
+    Bind.lazySingleton((i) => GetDataConsumptionDatasource(preferences: i.get<SharedPreferencesDriver>())),
+    Bind.lazySingleton((i) => GetDataConsumptionRepository(datasource: i.get<GetDataConsumptionDatasource>())),
+    Bind.lazySingleton((i) => GetDataConsumptionUsecase(repository: i.get<GetDataConsumptionRepository>())),
+
+    ///SetDataConsumption
+    Bind.lazySingleton((i) => SetDataConsumptionDatasource(preferences: i.get<SharedPreferencesDriver>())),
+    Bind.lazySingleton((i) => SetDataConsumptionRepository(datasource: i.get<SetDataConsumptionDatasource>())),
+    Bind.lazySingleton((i) => SetDataConsumptionUsecase(repository: i.get<SetDataConsumptionRepository>())),
+
     ///Stores
     Bind.lazySingleton((i) => PermissionsStore(
           getPermissionsUsecase: i.get<GetPermissionsUsecase>(),
@@ -42,6 +52,10 @@ class Home extends Module {
         )),
     Bind.lazySingleton((i) => NetworkStore(
           getNetworkTypeUsecase: i.get<GetNetworkTypeUsecase>(),
+        )),
+    Bind.lazySingleton((i) => DataConsumptionStore(
+          getDataConsumptionUsecase: i.get<GetDataConsumptionUsecase>(),
+          setDataConsumptionUsecase: i.get<SetDataConsumptionUsecase>(),
         )),
 
     ///Page Stores
@@ -54,9 +68,10 @@ class Home extends Module {
     Bind.lazySingleton(
         (i) => HistoryStore(permissionsStore: i.get<PermissionsStore>())),
     Bind.lazySingleton((i) => ConfigsStore(
-          permissionsStore: i.get<PermissionsStore>(),
-          networkStore: i.get<NetworkStore>(),
-        )),
+        permissionsStore: i.get<PermissionsStore>(),
+        networkStore: i.get<NetworkStore>(),
+        dataConsumptionStore: i.get<DataConsumptionStore>(),
+    )),
   ];
 
   @override

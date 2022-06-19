@@ -1,8 +1,7 @@
 import '../../../../dependencies/dependencies.dart';
-
 import '../../domain/domain.dart';
 
-class SetPermissionsUsecase extends ISetPermissionsUsecase{
+class SetPermissionsUsecase implements ISetPermissionsUsecase{
   final ISetPermissionsRepository _repository;
 
   SetPermissionsUsecase({
@@ -13,5 +12,4 @@ class SetPermissionsUsecase extends ISetPermissionsUsecase{
   Future<Either<Exception, Unit>> call({required PermissionsEntity permissions}) {
     return _repository(permissions: permissions);
   }
-
 }

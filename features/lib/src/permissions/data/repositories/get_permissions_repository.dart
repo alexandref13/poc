@@ -1,7 +1,7 @@
 import '../../../../dependencies/dependencies.dart';
 import '../../domain/domain.dart';
 
-class GetPermissionsRepository extends IGetPermissionsRepository {
+class GetPermissionsRepository implements IGetPermissionsRepository {
   final IGetPermissionsDatasource datasource;
 
   GetPermissionsRepository({required this.datasource});

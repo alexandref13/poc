@@ -2,7 +2,7 @@ import '../../../../dependencies/dependencies.dart';
 import '../../domain/domain.dart';
 import '../models/models.dart';
 
-class GetPermissionsDatasource extends IGetPermissionsDatasource {
+class GetPermissionsDatasource implements IGetPermissionsDatasource {
   final ISharedPreferencesDriver preferences;
 
   GetPermissionsDatasource({required this.preferences});

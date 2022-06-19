@@ -17,6 +17,7 @@ class _ConfigsScreenState extends State<ConfigsScreen> {
 
     store.permissionsStore.getPermissions();
     store.networkStore.getNetworkType();
+    store.dataConsumptionStore.getDataConsumption();
   }
 
   @override
@@ -56,8 +57,12 @@ class _ConfigsScreenState extends State<ConfigsScreen> {
           title: Text(L10N(context).text(_screen)['list'][2]['title']),
           subtitle: Text(L10N(context).text(_screen)['list'][2]['subtitle']),
           leading: const Icon(Icons.bar_chart_outlined),
-          trailing:
-              Text('0.00 ${L10N(context).text(_screen)['list'][2]['leading']}'),
+          trailing: TripleBuilder(
+            store: store.dataConsumptionStore,
+            builder: (_, triple) {
+              return Text(store.dataConsumptionStore.bytesPipe());
+            },
+          ),
         ),
         DefaultListItem(
           title: Text(L10N(context).text(_screen)['list'][3]['title']),

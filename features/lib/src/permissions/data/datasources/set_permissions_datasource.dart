@@ -2,7 +2,7 @@ import '../../../../dependencies/dependencies.dart';
 import '../../domain/domain.dart';
 import '../models/models.dart';
 
-class SetPermissionsDatasource extends ISetPermissionsDatasource {
+class SetPermissionsDatasource implements ISetPermissionsDatasource {
   final ISharedPreferencesDriver preferences;
 
   SetPermissionsDatasource({required this.preferences});
@@ -20,5 +20,3 @@ class SetPermissionsDatasource extends ISetPermissionsDatasource {
     }
   }
 }
-
-

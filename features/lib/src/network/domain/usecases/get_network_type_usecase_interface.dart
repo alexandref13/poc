@@ -1,4 +1,4 @@
-import 'package:core/core.dart';
+import '../../../../dependencies/dependencies.dart';
 
 import '../entities/entities.dart';
 

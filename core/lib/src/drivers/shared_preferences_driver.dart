@@ -5,6 +5,7 @@ abstract class ISharedPreferencesDriver {
   Future<Either<Exception, Unit>> setStringListByKey({required String key, required List<String> value});
   Future<Either<Exception, Unit>> removeStringByKey({ required String key });
   Future<Either<Exception, String>> getStringByKey({ required String key });
+  Future<Either<Exception, double>> getDoubleByKey({ required String key });
   Future<Either<Exception, List<String>>> getStringListByKey({ required String key });
 }
 
@@ -49,6 +50,22 @@ class SharedPreferencesDriver extends ISharedPreferencesDriver {
     try {
       final instance = await SharedPreferences.getInstance();
       final response = instance.getString(key);
+      if (response == null) {
+        return Left(Exception('Erro ao obter $key'));
+      }
+      return Right(response);
+    } catch (e) {
+      return Left(Exception(e));
+    }
+  }
+
+  @override
+  Future<Either<Exception, double>> getDoubleByKey({
+    required String key,
+  }) async {
+    try {
+      final instance = await SharedPreferences.getInstance();
+      final response = instance.getDouble(key);
       if (response == null) {
         return Left(Exception('Erro ao obter $key'));
       }
