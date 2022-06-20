@@ -3,7 +3,7 @@
 error=false
 
 show_help() {
-    printf "usage: $0 [--help] [--test] [--test-changed] [--analyze] [--report] [--clean] [--get] [--storybook-build] [--run] [--build-fix] [--feature]
+    printf "usage: $0 [--help] [--test] [--test-changed] [--analyze] [--report] [--clean] [--get] [--storybook-build] [--run] [--build-fix] [--feature] [--usecase]
 
 Tool for running useful commands on all Micro Apps.
 
@@ -31,24 +31,39 @@ where:
         Fix build conflicts for IOS and MacOs
     --feature
         Create a new feature
+    --usecase
+        Create a new usecase
     --help
         Print this message
 "
     exit 1
 }
 
-createAFeature(){
-    read -p "Digite o nome da feature: " feature
+createAFeature() {
+    read -p "Feature name: " feature
     echo "Creating $feature"
     cd features/lib/src || exit
-        mkdir -p $feature
-        srcdir="../../../tools/scripts/feature_model"
-        for f in ${srcdir}/*
-        do
-            cp -r $f $feature
-        done
-        cd $feature
-        mv "feature.dart" "$feature.dart"
+    mkdir -p $feature
+    srcdir="../../../tools/scripts/feature_model"
+    for f in ${srcdir}/*; do
+        cp -r $f $feature
+    done
+    cd $feature
+    mv "feature.dart" "$feature.dart"
+    cd - >/dev/null
+}
+
+createAUsecase() {
+    read -p "Feature name: " feature
+    read -p "Usecase name: " usecase
+    echo "Creating $usecase"
+    cd features/lib/src/$feature || exit
+    src=("data/datasources/${usecase}_datasource.dart" "data/models/${usecase}_model.dart" "data/repositories/${usecase}_repository.dart" "domain/datasources/${usecase}_datasource_interface.dart" "domain/repositories/${usecase}_repository_interface.dart" "domain/usecases/${usecase}_usecase_interface.dart" "domain/entities/${usecase}_entity.dart" "infra/usecases/${usecase}_usecase.dart")
+
+    for f in ${src[@]}; do
+        touch $f
+    done
+
     cd - >/dev/null
 }
 
@@ -223,6 +238,10 @@ case $1 in
 --feature)
     # exclude hidden
     createAFeature
+    ;;
+--usecase)
+    # exclude hidden
+    createAUsecase
     ;;
 --clean)
     rm -rf ".coverage"
