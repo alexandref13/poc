@@ -38,32 +38,32 @@ class MyAppState extends State<MyApp> {
     });
   }
 
-  _currentNetworkStatus() async {
-    if (Platform.isAndroid) {
-      await Permission.phone.request();
-    }
-    Map<String, String> status = await NetworkTypes().currentNetworkStatus();
-    final String type = status['type']!;
-    switch (type) {
-      case "unknown":
-      //unreachable
-      case "wifi":
-      //wifi
-      case "mobile2G":
-      //2g
-      case "mobile3G":
-      //3g
-      case "mobile4G":
-      //4g
-      case "mobile5G":
-      //5h
-      case "otherMobile":
-      //other
-    }
-    setState(() {
-      _networkStatus = type;
-    });
-  }
+  //_currentNetworkStatus() async {
+  //  if (Platform.isAndroid) {
+  //    await Permission.phone.request();
+  //  }
+  //  Map<String, String> status = await NetworkTypes().currentNetworkStatus();
+  //  final String type = status['type']!;
+  //  switch (type) {
+  //    case "unknown":
+  //    //unreachable
+  //    case "wifi":
+  //    //wifi
+  //    case "mobile2G":
+  //    //2g
+  //    case "mobile3G":
+  //    //3g
+  //    case "mobile4G":
+  //    //4g
+  //    case "mobile5G":
+  //    //5h
+  //    case "otherMobile":
+  //    //other
+  //  }
+  //  setState(() {
+  //    _networkStatus = type;
+  //  });
+  //}
 
   @override
   void dispose() {
