@@ -1,0 +1,34 @@
+name: core
+description: Pacote responsável pelas dependencias compartilhadas de projeto.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.17.1 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  dio: ^4.0.4
+  intl:
+  dartz: ^0.10.1
+  shared_preferences: ^2.0.6
+
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  mockito: ^5.2.0
+  triple_test: ^1.0.0
+  modular_test: ^2.0.0
+  flutter_lints: ^1.0.0
+
+
+flutter:
+  generate: true
+  uses-material-design: true

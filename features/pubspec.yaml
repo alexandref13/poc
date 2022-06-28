@@ -1,0 +1,30 @@
+name: features
+description: Pacote que contém todas as features do projeto.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.17.1 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl:
+  core:
+    path: ../core
+  design:
+    path: ../design
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+  mockito: ^5.2.0
+  triple_test: ^1.0.0
+  modular_test: ^2.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true

@@ -1,0 +1,96 @@
+{
+    "splash": {
+        "name": "EAQ"
+    },
+    "welcome":{
+        "name": "Bem-vindo",
+        "title": "Obrigado por instalar o app EAQ Brasil Banda Larga",
+        "description":"Começaremos revendo as diretivas de privacidade para que sua experiência seja mais confortável e segura.",
+        "next": "Prosseguir"
+    },
+    "permissions":{
+        "name": "Permissões",
+        "description": "Para que a sua conexão de banda larga seja aferida adequadamente é necessário habilitar as permissões a seguir no seu aparelho:",
+        "text": "Caso concorde, na sequência, favor conceder as permissões necessárias, avaliar os termos de uso e prosseguir com sua aferição normalmente.",
+        "next": "Prosseguir",
+        "content": [
+            {
+                "title": "Sua localização geográfica",
+                "description": "(Necessária para identificar o melhor servidor para seu teste)"
+            },
+            {
+                "title": "Acesso às mídias",
+                "description": "(Necessária apenas para armazenagem dos registros de testes no seu aparelho)"
+            },
+            {
+                "title": "Ligações telefônicas",
+                "description": "(Necessária para identificar o melhor servidor para seu teste)"
+            }
+        ]
+    },
+    "localization": {
+        "name": "Localização",
+        "next": "Prosseguir",
+        "content": [
+            {
+                "paragraph": "O aplicativo pode coletar seus dados de localização para medições autônomas mesmo quando estiver fechado ou não utilizado."
+            },
+            {
+                "paragraph": "Essas medições somente serão realizadas quando não houver concorrência de uso, evitando impacto na navegabilidade e prejuízo ao usuário."
+            },
+            {
+                "paragraph": "As medições autônomas não serão cobradas da franquia do assinante."
+            }
+        ]
+    },
+    "grantPermissions": {
+        "name": "Conceder permissões",
+        "description": "Permitir que o app EAQ acesse a localização desde dispositivo?",
+        "grant": "Conceder",
+        "not_grant": "Negar"
+    },
+    "network": {
+        "name": "Tipo de Rede",
+        "title": "Este é o tipo de rede que você está utilizando:"
+    },
+    "home": {
+        "name": "Home",
+        "paragraph": "Parabéns você acessou o app EAQ Brasil Banda Larga",
+        "permission": "Alterar permissões",
+        "navigation": [
+            { "label": "Velocímetro"},
+            { "label": "Histórico"},
+            { "label": "Ajustes"}
+        ]
+    },
+    "configs":{
+        "name": "Ajustes",
+        "version": "Versão:",
+        "compilation": "Compilação:",
+        "terms": "Termos de uso",
+        "list": [
+            { "title": "Tema Escuro", "disabled": "Habilitar", "enabled": "Desabilitar" },
+            { "title": "Histórico de medições", "subtitle": "Limpar todo o histórico de medições realizado."},
+            { "title": "Dados Utilizados", "subtitle": "A quantidade de dados (excluindo WIFI) utilizada por este aplicativo desde o início do período mensal de cobrança.", "button": "Zerar Consumo", "leading": "bytes" },
+            { "title": "Limite de dados móveis", "subtitle": "A máxima quantidade de dados em Mega Bytes (excluindo WIFI) que este aplicativo pode usar no período mensal de cobrança."},
+            { "title": "Dia de zerar uso de dados", "subtitle": "Selecione o dia do mês que o contador da utilização dos dados móveis deve ser zerado."},
+            { "title": "Remover permissões", "subtitle": "Remova as permissões de utilização do serviço."},
+            { "title": "Resetar dados", "subtitle": "Apagar todos os dados.", "button": "Resetar"},
+            { "title": "Tipo de conexão", "connection": [
+                { "type": "Wifi"},
+                { "type": "5G"},
+                { "type": "4G"},
+                { "type": "3G"},
+                { "type": "2G"}
+            ]}
+        ]
+    },
+    "speedometer":{
+        "name": "Velocimetro",
+        "button": "Remover Permissões"
+    },
+    "history":{
+        "name": "Histórico",
+        "button": "Remover Permissões"
+    }
+}

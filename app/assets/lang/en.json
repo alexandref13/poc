@@ -1,0 +1,96 @@
+{
+    "splash": {
+        "name": "EAQ"
+    },
+    "welcome":{
+        "name": "Welcome",
+        "title": "Thank you for installing the EAQ Brasil Banda Larga app",
+        "description":"We'll start by reviewing the privacy policies to make your experience more comfortable and secure.",
+        "next": "Next"
+    },
+    "permissions":{
+        "name": "Permissions",
+        "description": "In order for your broadband connection to be properly checked, you must enable the following permissions on your device:",
+        "text": "If you agree, then please grant the necessary permissions, review the terms of use and proceed with your assessment as normal.",
+        "next": "Next",
+        "content": [
+            {
+                "title": "Your geographic location",
+                "description": "(Required to identify the best server for your test)"
+            },
+            {
+                "title": "Media access",
+                "description": "(Required only for storing test records on your device)"
+            },
+            {
+                "title": "Phone calls",
+                "description": "(Required to identify the best server for your test)"
+            }
+        ]
+    },
+    "localization": {
+        "name": "Localization",
+        "next": "Next",
+        "content": [
+            {
+                "paragraph": "The app can collect your location data for standalone measurements even when closed or unused."
+            },
+            {
+                "paragraph": "These measurements will only be carried out when there is no competition in use, avoiding impact on navigability and harm to the user."
+            },
+            {
+                "paragraph": "Standalone measurements will not be charged to the subscriber's deductible."
+            }
+        ]
+    },
+    "grantPermissions": {
+        "name": "Grant Permissions",
+        "description": "Allow EAQ app to access location from device?",
+        "grant": "Grant",
+        "not_grant": "Deny"
+    },
+    "network": {
+        "name": "Network Type",
+        "title": "This is the type of network you are using:"
+    },
+    "home": {
+        "name": "Home",
+        "paragraph": "Congratulations you have accessed the EAQ Brasil Banda Larga app",
+        "permission": "Change permissions",
+        "navigation": [
+            { "label": "Speedometer"},
+            { "label": "Historic"},
+            { "label": "Configs"}
+        ]
+    },
+    "configs":{
+        "name": "Configs",
+        "version": "Version:",
+        "compilation": "Compilation:",
+        "terms": "Terms of use",
+        "list": [
+            { "title": "Dark Theme", "disabled": "enable", "enabled": "Disable" },
+            { "title": "Measurement history", "subtitle": "Clear all measurement history performed."},
+            { "title": "Data used", "subtitle": "The amount of data (excluding WIFI) used by this app since the beginning of the monthly billing period.", "button": "Consumption reset", "leading": "bytes" },
+            { "title": "Mobile Data Limit", "subtitle": "The maximum amount of data in Mega Bytes (excluding WIFI) that this app can use in the monthly billing period."},
+            { "title": "Data usage reset day", "subtitle": "Select the day of the month that the mobile data usage counter should be reset."},
+            { "title": "Permissions revoke", "subtitle": "Remove service usage permissions."},
+            { "title": "Reset data", "subtitle": "Reset all data.", "button": "Reset"},
+            { "title": "Connection type", "connection": [
+                { "type": "Wifi"},
+                { "type": "5G"},
+                { "type": "4G"},
+                { "type": "3G"},
+                { "type": "2G"}
+            ]}
+        ]
+    },
+    "speedometer":{
+        "name": "Speedometer",
+        "button": "Permissions revoke"
+    },
+    "history":{
+        "name": "History",
+        "button": "Permissions revoke"
+    }
+}
