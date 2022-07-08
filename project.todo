@@ -1,15 +1,7 @@
 
 #POC
-1. [x] - Organizar o modulo core
-2. [x] - Organizar o modulo app
-3. [x] - Organizar o modulo packages
-4. [x] - Organizar o modulo layouts
-5. [x] - Organizar a feature onboarding
-
-# Features para a POC
-1. [x] - Roteamento e navegação
-2. [x] - template de telas e componentes
-3. [ ] - Informações de rede
-4. [x] - Shared Preferences
-5. [x] - Estrutura do projeto
-6. [ ] - Canal de comunicação Android nativo
+1. [x] - Clean Arch
+2. [x] - Tela Home
+3. [x] - Adicionar task
+4. [x] - Mudar o isFinished
+5. [] - Agendar
