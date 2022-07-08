@@ -1,2 +1,0 @@
-export 'get_data_consumption_repository_interface.dart';
-export 'set_data_consumption_repository_interface.dart';

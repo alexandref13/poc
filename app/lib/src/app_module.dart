@@ -12,7 +12,6 @@ class AppModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ModuleRoute(Modular.initialRoute, module: Onboarding()),
-    ModuleRoute('/home', module: Home()),
+    ModuleRoute(Modular.initialRoute, module: Home()),
   ];
 }
