@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../../dependencies/dependencies.dart';
 
@@ -17,6 +17,7 @@ class TodoStore extends NotifierStore<Exception, TodoEntity> with Disposable {
 
   List<TodoEntity> todoEntities = [];
   TextEditingController name = TextEditingController();
+  TextEditingController scheduling = TextEditingController();
 
   Future<void> getTodoData() async {
     setLoading(true);
@@ -26,9 +27,9 @@ class TodoStore extends NotifierStore<Exception, TodoEntity> with Disposable {
         (r) {
           todoEntities = r;
           todoEntities.sort((m1, m2) {
-            var r = m2.date.compareTo(m1.date);
+            var r = m1.date.compareTo(m2.date);
             if (r != 0) return r;
-            return m2.date.compareTo(m1.date);
+            return m1.date.compareTo(m2.date);
           });
 
           for (var element in r) {
@@ -41,14 +42,12 @@ class TodoStore extends NotifierStore<Exception, TodoEntity> with Disposable {
   }
 
   Future<void> setTodoData() async {
-    DateTime now = DateTime.now();
     List<TodoEntity> todoEntity = todoEntities;
 
-    var date = DateFormat('dd/MM/yyyy HH:mm').format(now);
     todoEntity.add(
       TodoEntity(
         name: name.text,
-        date: date,
+        date: scheduling.text,
       ),
     );
     setLoading(true);
@@ -61,6 +60,7 @@ class TodoStore extends NotifierStore<Exception, TodoEntity> with Disposable {
     });
 
     name.clear();
+    scheduling.clear();
   }
 
   Future<void> changeIsFinished(List<TodoEntity> listTodoEntity) async {

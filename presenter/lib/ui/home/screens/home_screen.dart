@@ -13,6 +13,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final todoStore = Modular.get<TodoStore>();
 
+  DateTime selectedDate = DateTime.now();
+
   @override
   void initState() {
     onLoad();
@@ -30,6 +32,22 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
+  Future<void> selectDate({
+    required BuildContext context,
+  }) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: selectedDate,
+      lastDate: DateTime(2023),
+    );
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        todoStore.scheduling.text = DateFormat('dd/MM/yyyy').format(picked);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultScreen(
@@ -40,27 +58,49 @@ class _HomeScreenState extends State<HomeScreen> {
             : Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  TextFormField(
+                    controller: todoStore.name,
+                    onChanged: (String? value) {
+                      setState(() {});
+                    },
+                    decoration: const InputDecoration(
+                        hintText: 'Name',
+                        hintStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                        )),
+                  ),
+                  SizedBox(height: Dots.p8.value),
                   Row(
                     children: [
                       Expanded(
                           flex: 3,
-                          child: TextFormField(
-                            controller: todoStore.name,
-                            onChanged: (String? value) {
-                              setState(() {});
+                          child: InkWell(
+                            onTap: () {
+                              selectDate(
+                                context: context,
+                              );
                             },
-                            decoration: const InputDecoration(
-                                hintText: 'Name',
-                                hintStyle: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                )),
+                            child: TextFormField(
+                              enabled: false,
+                              controller: todoStore.scheduling,
+                              onChanged: (String? value) {
+                                setState(() {});
+                              },
+                              decoration: const InputDecoration(
+                                  hintText: 'Data de agendamento',
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                  )),
+                            ),
                           )),
                       SizedBox(width: Dots.p8.value),
                       Expanded(
                         flex: 1,
                         child: ElevatedButton(
-                            onPressed: todoStore.name.text.isEmpty
+                            onPressed: todoStore.name.text.isEmpty ||
+                                    todoStore.scheduling.text.isEmpty
                                 ? null
                                 : () async {
                                     await todoStore.setTodoData();

@@ -53,7 +53,6 @@ class DefaultScreen extends StatelessWidget {
                 : null,
             bottomNavigationBar: bottomNavigationBar,
             body: Container(
-              width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.all(Dots.p16.value),
               decoration: isBackground
                   ? BoxDecoration(

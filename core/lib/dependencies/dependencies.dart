@@ -16,6 +16,3 @@ export 'package:cloud_firestore/cloud_firestore.dart';
 
 ///Solicitar permissões
 export 'package:permission_handler/permission_handler.dart';
-
-///Plugins Dependencies
-export 'package:network_types/network_types.dart';
